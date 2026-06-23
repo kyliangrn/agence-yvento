@@ -187,12 +187,13 @@ nav.scrolled .nav-inner{max-width:960px;background:rgba(18,20,24,0.5);border-col
 @media (max-width:430px){.proc4{grid-template-columns:1fr}.pcol{border-right:none;padding:0;border-top:1px solid var(--line);padding-top:24px}.pcol:first-child{border-top:none;padding-top:0}}
 
 /* ÉQUIPE */
-.team-layout{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center}
+.team-layout{display:block}
+.team-intro{max-width:680px;margin:0 auto 56px;text-align:center}
 .team-intro h2{font-size:clamp(29px,3.5vw,42px);font-weight:600;letter-spacing:-0.02em;margin-bottom:20px}
-.team-intro p{color:var(--tx-2);font-size:16.5px;line-height:1.75;max-width:46ch;margin-bottom:16px}
+.team-intro p{color:var(--tx-2);font-size:16.5px;line-height:1.75;max-width:60ch;margin:0 auto 16px}
 .team-intro p b{color:var(--tx);font-weight:600}
 .team-flag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;color:var(--tx-2);background:var(--surface);border:1px solid var(--line);padding:8px 15px;border-radius:999px;margin-top:6px}
-.founders{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.founders{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .fcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s}
 .fcard:hover{transform:translateY(-4px);box-shadow:0 26px 48px -34px rgba(20,22,26,0.32)}
 .fcard__ph{aspect-ratio:1/1;overflow:hidden;background:var(--surface-2)}
@@ -201,7 +202,7 @@ nav.scrolled .nav-inner{max-width:960px;background:rgba(18,20,24,0.5);border-col
 .fcard__body{padding:14px 16px 18px}
 .fcard__name{font-size:16px;font-weight:900;letter-spacing:-0.02em}
 .fcard__role{font-family:var(--mono);font-size:11.5px;color:var(--tx-3);margin-top:2px}
-@media (max-width:880px){.team-layout{grid-template-columns:1fr;gap:36px}.founders{max-width:420px}}
+@media (max-width:880px){.founders{grid-template-columns:1fr 1fr;max-width:460px;margin:0 auto}}
 
 /* FAQ */
 .faqs{max-width:780px;margin:0 auto;border-top:1px solid var(--line)}
@@ -434,14 +435,14 @@ nav.scrolled .nav-inner{max-width:960px;background:rgba(18,20,24,0.5);border-col
   </div>
   <div class="wrap">
     <div class="hero__text">
-      <div class="eyebrow reveal">Agence de prospection commerciale B2B</div>
-      <h1 class="reveal d1">La prospection pour<br>améliorer <span class="hl">votre conversion.</span></h1>
-      <p class="hero__sub reveal d2">On s'occupe de la prospection. Ciblage précis, messages personnalisés, rendez-vous qualifiés. Vous, vous vendez.</p>
+      <div class="eyebrow reveal">Votre croissance commerciale B2B</div>
+      <h1 class="reveal d1">Moins de prospection.<br>Plus de <span class="hl">closing.</span> Enfin.</h1>
+      <p class="hero__sub reveal d2">Vous avez une offre qui fonctionne. Vous n'avez pas le temps de la vendre à tout le monde. On s'en charge.</p>
       <div class="hero__actions reveal d2">
-        <button class="btn btn--accent js-audit" type="button">Prendre contact <span class="arrow">→</span></button>
-        <a href="#methode" class="btn btn--ghost">Voir la méthode</a>
+        <button class="btn btn--accent js-audit" type="button">Réserver mon bilan offert <span class="arrow">→</span></button>
+        <a href="#methode" class="btn btn--ghost">Découvrir notre méthode</a>
       </div>
-      <div class="hero__trust reveal d3"><span>Premier échange gratuit</span><span class="dot"></span><span>Sans engagement</span><span class="dot"></span><span>Réponse sous <b>24 h</b></span></div>
+      <div class="hero__trust reveal d3"><span>Bilan offert</span><span class="dot"></span><span>Sans engagement</span><span class="dot"></span><span>Réponse sous <b>24 h</b></span></div>
     </div>
   </div>
 </header>
@@ -449,8 +450,8 @@ nav.scrolled .nav-inner{max-width:960px;background:rgba(18,20,24,0.5);border-col
 <!-- BANDEAU CHIFFRES -->
 <div class="kfbar" aria-hidden="true">
   <div class="kfbar__track">
-    <span class="kf"><b>3</b> canaux maîtrisés</span><span class="kf"><b>24 h</b> de réponse</span><span class="kf"><b>100 %</b> sur-mesure</span><span class="kf"><b>0 €</b> le premier échange</span>
-    <span class="kf"><b>3</b> canaux maîtrisés</span><span class="kf"><b>24 h</b> de réponse</span><span class="kf"><b>100 %</b> sur-mesure</span><span class="kf"><b>0 €</b> le premier échange</span>
+    <span class="kf">Bilan commercial offert</span><span class="kf"><b>3</b> canaux activés</span><span class="kf">Ciblage ICP sur-mesure</span><span class="kf"><b>0</b> SDR à recruter</span>
+    <span class="kf">Bilan commercial offert</span><span class="kf"><b>3</b> canaux activés</span><span class="kf">Ciblage ICP sur-mesure</span><span class="kf"><b>0</b> SDR à recruter</span>
   </div>
 </div>
 
@@ -458,9 +459,9 @@ nav.scrolled .nav-inner{max-width:960px;background:rgba(18,20,24,0.5);border-col
 <section class="chan" id="methode">
   <div class="wrap">
     <div class="section-head center reveal">
-      <div class="eyebrow">Notre approche</div>
-      <h2 class="title">Trois façons de remplir <em>votre pipeline.</em></h2>
-      <p class="lead" style="margin-top:18px">On ne vend pas du volume. On construit une base ultra-ciblée sur votre ICP, on active les bons canaux et on mesure tout en temps réel. À vous de choisir l'intensité. L'obsession de la qualité, c'est nous qui la gardons.</p>
+      <div class="eyebrow">Notre méthode</div>
+      <h2 class="title">Trois leviers pour remplir <em>votre pipeline.</em></h2>
+      <p class="lead" style="margin-top:18px">On identifie vos prospects idéaux, on les contacte, on vous livre les RDV. Vous avez les experts, les outils et le process. Vous avez juste à closer.</p>
     </div>
     <div class="cstack">
 
@@ -469,11 +470,12 @@ nav.scrolled .nav-inner{max-width:960px;background:rgba(18,20,24,0.5);border-col
         <div class="feat__body">
           <div class="feat__lbl">Bundle Acquisition</div>
           <div class="feat__t">Construire un pipeline de zéro</div>
-          <p class="feat__b">Pour les SaaS B2B sans SDR : on pose les fondations : une base ultra-ciblée et des appels structurés qui décrochent des RDV décideurs dès les premières semaines.</p>
+          <p class="feat__b">Vous n'avez pas encore de machine commerciale. On la construit. Une base qualifiée sur votre ICP, des appels structurés, des RDV décideurs livrés dans votre agenda.</p>
           <ul class="feat__pts">
-            <li>Base de 100 contacts sur votre ICP (poste, email, tél. direct)</li>
-            <li>Prospection téléphonique avec script sur-mesure</li>
-            <li>Dashboard de pilotage + reporting hebdomadaire</li>
+            <li>Fichier prospects qualifié sur votre ICP (poste, email, tél. direct)</li>
+            <li>Prospection téléphonique avec script validé ensemble</li>
+            <li>Suivi en temps réel : KPIs, taux de contact, RDV obtenus, feedback terrain</li>
+            <li>Vous avez déjà votre base ? On l'active directement.</li>
           </ul>
           <div class="chips"><span class="chip chip--phone">Téléphone</span></div>
         </div>
@@ -489,11 +491,11 @@ nav.scrolled .nav-inner{max-width:960px;background:rgba(18,20,24,0.5);border-col
         <div class="feat__body">
           <div class="feat__lbl">Bundle Growth</div>
           <div class="feat__t">Activer l'outbound multicanal</div>
-          <p class="feat__b">Pour une équipe en place au pipeline insuffisant : on touche chaque prospect par téléphone, email et LinkedIn dans le même cycle, coordonné et mesurable, sans recruter de SDR.</p>
+          <p class="feat__b">Votre pipeline ne suit pas votre ambition. On coordonne téléphone, email et LinkedIn sur les mêmes cibles, au même moment. Trois canaux, un seul objectif : des RDV qualifiés.</p>
           <ul class="feat__pts">
-            <li>Base de 200 contacts ciblés</li>
+            <li>Fichier prospects qualifié sur votre ICP (poste, email, tél. direct)</li>
             <li>Téléphone + email + LinkedIn coordonnés sur les mêmes cibles</li>
-            <li>Dashboard unifié (KPIs par canal, taux de réponse, RDV) + recommandations</li>
+            <li>Suivi en temps réel : KPIs par canal, taux de réponse, RDV obtenus</li>
           </ul>
           <div class="chips"><span class="chip chip--phone">Téléphone</span><span class="chip chip--mail">Email</span><span class="chip chip--in">LinkedIn</span></div>
         </div>
@@ -512,13 +514,13 @@ nav.scrolled .nav-inner{max-width:960px;background:rgba(18,20,24,0.5);border-col
       <!-- Bundle Terrain -->
       <article class="feat feat--terrain reveal d3">
         <div class="feat__body">
-          <div class="feat__lbl">Bundle Terrain</div>
+          <div class="feat__lbl">Bundle Terrain sur mesure</div>
           <div class="feat__t">Gagner les marchés de terrain</div>
-          <p class="feat__b">Pour les marchés que le digital n'atteint pas : un commercial sur le terrain en Occitanie, une méthode structurée et un suivi chiffré. On crée la relation avant de pitcher.</p>
+          <p class="feat__b">Certains décideurs ne répondent pas aux emails. On va les voir. Prospection physique en Occitanie, méthode structurée, relation créée avant le pitch.</p>
           <ul class="feat__pts">
-            <li>Base de 100 contacts par zone (adresses incluses), tournées optimisées</li>
-            <li>Pitch + qualification sur place (besoin, décideur, timing)</li>
-            <li>Compte-rendu sous 24 h, CRM à jour + dashboard de transformation</li>
+            <li>Fichier prospects qualifié par zone (adresses, décideurs, tournées optimisées)</li>
+            <li>Qualification sur place : besoin, décideur, timing</li>
+            <li>CRM mis à jour en temps réel + reporting de transformation</li>
           </ul>
           <div class="chips"><span class="chip chip--geo">Terrain</span><span class="chip chip--geo">Occitanie</span></div>
         </div>
@@ -536,19 +538,19 @@ nav.scrolled .nav-inner{max-width:960px;background:rgba(18,20,24,0.5);border-col
 <section class="process" id="process">
   <div class="wrap">
     <div class="section-head center reveal">
-      <div class="eyebrow">Process</div>
+      <div class="eyebrow">Notre process</div>
       <h2 class="title">En 4 étapes, <em>on remplit votre agenda.</em></h2>
     </div>
     <div class="proc4 reveal d1">
       <div class="pcol pcol--audit">
         <div class="pcol__n">01</div>
-        <div class="pcol__t">Premier échange</div>
-        <div class="pcol__b">On analyse votre cible, votre offre et vos objectifs. Sans engagement.</div>
+        <div class="pcol__t">Bilan commercial</div>
+        <div class="pcol__b">On analyse votre cible, votre offre et vos objectifs. C'est offert.</div>
         <button type="button" class="pcol__cta js-audit">Laisser mes coordonnées <span class="arrow">→</span></button>
       </div>
-      <div class="pcol"><div class="pcol__n">02</div><div class="pcol__t">Proposition</div><div class="pcol__b">Un plan et un tarif ajustés à votre situation. Jamais de package standard.</div></div>
-      <div class="pcol"><div class="pcol__n">03</div><div class="pcol__t">Lancement</div><div class="pcol__b">On construit les listes ultra-ciblées et on lance la prospection multicanale.</div></div>
-      <div class="pcol"><div class="pcol__n">04</div><div class="pcol__t">Rendez-vous</div><div class="pcol__b">Vous recevez des conversations commerciales prêtes à closer. Vous vendez.</div></div>
+      <div class="pcol"><div class="pcol__n">02</div><div class="pcol__t">Proposition</div><div class="pcol__b">Un plan et un tarif ajustés à votre situation. Sur-mesure, toujours.</div></div>
+      <div class="pcol"><div class="pcol__n">03</div><div class="pcol__t">Lancement</div><div class="pcol__b">On construit votre fichier prospects et on active la prospection multicanale.</div></div>
+      <div class="pcol"><div class="pcol__n">04</div><div class="pcol__t">Rendez-vous</div><div class="pcol__b">Vous recevez des RDV qualifiés dans votre agenda. Vous closez.</div></div>
     </div>
   </div>
 </section>
@@ -559,9 +561,9 @@ nav.scrolled .nav-inner{max-width:960px;background:rgba(18,20,24,0.5);border-col
     <div class="team-layout">
       <div class="team-intro reveal">
         <div class="eyebrow">L'équipe</div>
-        <h2>Une agence <span class="hl">complète.</span></h2>
-        <p>Yvento réunit des <b>prospecteurs dédiés</b>, un pôle opérations et un vrai savoir-faire en <b>digitalisation des process</b>. On combine l'humain du cold call et la puissance de l'automatisation.</p>
-        <p>Aux commandes, <b>deux cofondateurs</b> complémentaires — stratégie &amp; growth d'un côté, opérations &amp; terrain de l'autre — entourés d'une équipe dédiée : <b>consulting outbound</b> et <b>architecture logicielle</b>.</p>
+        <h2>L'équipe qui remplit <span class="hl">votre agenda.</span></h2>
+        <p>Pas une plateforme. Pas un call center. <b>Une équipe</b> qui connaît votre marché, maîtrise les outils et prospecte comme si c'était sa propre boîte.</p>
+        <p><b>Deux cofondateurs</b> aux commandes, des consultants outbound formés à notre méthode et un expert digital pour automatiser ce qui peut l'être. Chaque mission est suivie de près, par une équipe qui s'y investit vraiment.</p>
         <div class="team-flag"><span>🇫🇷</span> Basé en France</div>
       </div>
       <div class="founders reveal d1">
@@ -594,12 +596,11 @@ nav.scrolled .nav-inner{max-width:960px;background:rgba(18,20,24,0.5);border-col
       <h2 class="title">Ce que vous <em>nous demandez</em></h2>
     </div>
     <div class="faqs reveal d1">
-      <details><summary>Sous combien de temps les premiers rendez-vous ?<span class="pm"></span></summary><p>Les premières conversations arrivent en général dans les premières semaines après le lancement. On privilégie la qualité à la vitesse : un bon prospect un peu plus tard vaut mieux qu'un agenda rempli de rendez-vous inutiles.</p></details>
-      <details><summary>C'est quoi un rendez-vous qualifié ?<span class="pm"></span></summary><p>Un rendez-vous avec un décideur dans votre cible, qui a un besoin potentiel et a accepté l'échange. On définit les critères avec vous en amont, pour que chaque rendez-vous ait une vraie chance de closer.</p></details>
-      <details><summary>Quels secteurs adressez-vous ?<span class="pm"></span></summary><p>Tous les secteurs B2B. L'approche s'adapte à votre marché : c'est le rôle du premier échange que de cadrer votre cible précise avant de démarrer.</p></details>
-      <details><summary>Y a-t-il un engagement ?<span class="pm"></span></summary><p>Le premier échange est gratuit et sans engagement. Pour la prestation, les modalités sont fixées dans la proposition qui en découle, adaptées à votre situation.</p></details>
-      <details><summary>En quoi êtes-vous différents ?<span class="pm"></span></summary><p>La plupart vendent du volume et de l'automatisation. Nous vendons des conversations. Ciblage précis, cold call au cœur de la méthode, messages personnalisés, et un échange de cadrage avant toute proposition.</p></details>
-      <details><summary>Comment se passe le premier échange ?<span class="pm"></span></summary><p>Un échange de cadrage : on découvre votre offre, votre cible et vos objectifs. On analyse, puis on revient avec une proposition précise. Aucune obligation.</p></details>
+      <details><summary>Comment se passe le premier échange ?<span class="pm"></span></summary><p>On commence par un bilan commercial offert. En 30 minutes, on apprend à se connaître, on identifie précisément vos besoins et on évalue votre maturité commerciale grâce à nos outils de diagnostic internes. Si on peut vous aider, on vous fait une proposition sur-mesure. Si votre besoin dépasse notre périmètre, on vous le dit franchement. On ne propose pas ce qu'on ne peut pas tenir.</p></details>
+      <details><summary>Peut-on tester sans s'engager ?<span class="pm"></span></summary><p>Oui, c'est même ce qu'on recommande. La prospection externalisée est un engagement important pour votre développement commercial. Vous devez être rassurés avant de vous lancer. Nos missions sont sans engagement de durée, résiliables à tout moment. Vous testez, vous évaluez, vous décidez.</p></details>
+      <details><summary>Vous travaillez avec quel type d'entreprises ?<span class="pm"></span></summary><p>On travaille avec toutes les entreprises B2B qui ont un besoin commercial à structurer ou à accélérer. TPE, PME, startups en traction. Que vous ayez besoin de construire une base de prospects, de tester une nouvelle cible, de lancer de la prospection multicanale ou d'optimiser votre CRM, on s'adapte à votre situation. Pas de taille minimum. Pas de secteur exclu.</p></details>
+      <details><summary>Que se passe-t-il si les résultats ne sont pas au rendez-vous ?<span class="pm"></span></summary><p>On suit chaque mission de près avec des reportings hebdomadaires. Si les résultats ne sont pas au rendez-vous, on identifie précisément ce qui bloque et pourquoi : script, ciblage, canal, timing. On réajuste et on repart. La transparence est non négociable pour nous. Votre satisfaction est notre priorité, pas la reconduction automatique d'une mission qui ne performe pas.</p></details>
+      <details><summary>En quoi êtes-vous différents ?<span class="pm"></span></summary><p>Une équipe à taille humaine, des experts dans leur domaine, une approche terrain et zéro bullshit. Pas de promesses qu'on ne peut pas tenir, pas de packages standards appliqués à la chaîne. Chaque mission est pilotée par des experts qui cumulent des années d'expérience en prospection, growth et digital. Vous avez un interlocuteur direct, pas un account manager qui relaie.</p></details>
     </div>
   </div>
 </section>
@@ -609,10 +610,10 @@ nav.scrolled .nav-inner{max-width:960px;background:rgba(18,20,24,0.5);border-col
   <div class="wrap">
     <div class="cta__box reveal">
       <div class="cta__inner">
-        <h2>Prêt à améliorer <span class="hl">votre conversion</span> ?</h2>
-        <p>Un premier échange gratuit pour commencer. On analyse, on propose, on lance.</p>
-        <button class="btn btn--accent js-audit" type="button">Prendre contact <span class="arrow">→</span></button>
-        <div class="fine">Premier échange gratuit · Sans engagement · Réponse sous 24 h</div>
+        <h2>Prêt à remplir <span class="hl">votre agenda</span> ?</h2>
+        <p>Un bilan commercial offert pour commencer. On analyse, on propose, on lance.</p>
+        <button class="btn btn--accent js-audit" type="button">Réserver mon bilan offert <span class="arrow">→</span></button>
+        <div class="fine">Bilan offert · Sans engagement · Réponse sous 24 h</div>
       </div>
     </div>
   </div>
