@@ -1,0 +1,8 @@
+# OS
+.DS_Store
+
+# Tooling / agents / skills (non liés au site)
+.claude/
+.agents/
+ui-ux-pro-max-skill/
+skills-lock.json

@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.remove('no-js');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+
+<title>Yvento · Agence de prospection commerciale B2B</title>
+<meta name="description" content="La prospection pour améliorer votre conversion. Cold call, ciblage précis, rendez-vous qualifiés. Agence de prospection B2B. Premier échange gratuit, sans engagement.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Yvento">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yvento · Agence de prospection commerciale B2B">
+<meta property="og:description" content="La prospection pour améliorer votre conversion. Des rendez-vous qualifiés, pas du volume.">
+<meta property="og:image" content="assets/favicon.png">
+<meta property="og:image:width" content="504">
+<meta property="og:image:height" content="504">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Roboto:wght@400;500;700;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ════════════ YVENTO — clair · lime · forme 3D (image) + animations méthode ════════════ */
+:root{
+  --bg:#0B0C0F; --surface:#15171C; --surface-2:#1E2128; --ink:#0B0C0F;
+  --line:rgba(255,255,255,0.12); --line-2:rgba(255,255,255,0.06);
+  --tx:#F3F4F6; --tx-2:rgba(243,244,246,0.64); --tx-3:rgba(243,244,246,0.42);
+  --lime:#FF4329; --lime-deep:#E5391F;
+  --orange:#E0833A; --blue:#3B8EF0;
+  --maxw:1140px;
+  --ease:cubic-bezier(0.22,1,0.36,1); --ease-expo:cubic-bezier(0.16,1,0.3,1);
+  --font:'Roboto',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; --mono:'Roboto Mono',monospace;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font);background:var(--bg);color:var(--tx);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--lime);color:var(--ink)}
+:focus-visible{outline:2px solid var(--tx);outline-offset:3px;border-radius:3px}
+
+/* PRIMITIVES */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;width:100%;position:relative;z-index:2}
+section{padding:118px 0;position:relative;z-index:1;overflow:hidden}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--serif);font-style:italic;font-size:16px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--tx-2);margin-bottom:18px}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--lime)}
+h1,h2,h3{font-family:var(--serif);letter-spacing:-0.02em;line-height:1.12;color:var(--tx);font-weight:600}
+h2.title{font-size:clamp(29px,3.7vw,44px);font-weight:600;letter-spacing:-0.02em}
+h2.title em,.hl{font-style:normal;color:var(--tx);position:relative;white-space:nowrap;z-index:0}
+h2.title em::after,.hl::after{content:"";position:absolute;left:-3px;right:-3px;bottom:.04em;height:.34em;background:var(--lime);z-index:-1;border-radius:3px}
+.lead{font-size:clamp(16px,1.6vw,18px);color:var(--tx-2);line-height:1.7;max-width:58ch}
+.section-head{max-width:680px;margin-bottom:56px}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.section-head.center .lead{margin-left:auto;margin-right:auto}
+
+/* FORME 3D (image PNG + repli doux en attendant le rendu) */
+.deco{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.shape3d{position:absolute;z-index:0;pointer-events:none;will-change:transform}
+.shape3d svg{width:100%;height:auto;display:block;overflow:visible;filter:drop-shadow(0 34px 50px rgba(255,67,41,0.30))}
+.shape3d--mini{opacity:.72}
+
+/* BOUTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;padding:14px 26px;border-radius:11px;cursor:pointer;border:1px solid transparent;transition:transform .25s var(--ease),background .25s,border-color .25s,box-shadow .25s;white-space:nowrap}
+.btn--accent{background:var(--lime);color:#fff;box-shadow:0 10px 26px -10px rgba(255,67,41,0.45)}
+.btn--accent:hover{background:var(--lime-deep);transform:translateY(-2px);box-shadow:0 16px 34px -12px rgba(255,67,41,0.55)}
+.btn--ghost{background:rgba(255,255,255,0.05);color:var(--tx);border-color:var(--line)}
+.btn--ghost:hover{border-color:var(--tx);transform:translateY(-2px)}
+.arrow{transition:transform .25s var(--ease)}
+.btn:hover .arrow{transform:translateX(4px)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{scroll-behavior:auto!important;animation:none!important}}
+.no-js .reveal{opacity:1;transform:none}
+
+
+/* NAV */
+nav{position:fixed;top:16px;left:0;right:0;z-index:200;padding:0 5%;pointer-events:none}
+.nav-inner{max-width:1140px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;pointer-events:auto;padding:9px 11px 9px 22px;background:rgba(18,20,24,0.28);border:1px solid var(--line-2);backdrop-filter:blur(16px) saturate(150%);-webkit-backdrop-filter:blur(16px) saturate(150%);border-radius:999px;transition:max-width .7s var(--ease-expo),background .45s,border-color .45s,box-shadow .45s}
+nav.scrolled .nav-inner{max-width:960px;background:rgba(18,20,24,0.5);border-color:var(--line);box-shadow:0 10px 34px rgba(20,22,26,0.1)}
+.nav-logo-text{font-weight:900;font-size:18px;color:var(--tx);letter-spacing:-0.03em}
+.nav-logo-text .pt{color:var(--lime)}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{font-size:13px;font-weight:500;color:var(--tx-2);transition:color .2s}
+.nav-links a:hover{color:var(--tx)}
+.btn-filled-sm{font-size:13px;font-weight:700;color:#fff;padding:9px 18px;background:var(--lime);border:none;border-radius:999px;cursor:pointer;transition:transform .3s,background .3s}
+.btn-filled-sm:hover{background:var(--lime-deep);transform:translateY(-1px)}
+@media (max-width:820px){.nav-links{display:none}}
+
+/* HERO */
+.hero{position:relative;padding:170px 0 100px;min-height:94vh;display:flex;align-items:center}
+.hero-art{position:absolute;top:50%;left:74%;transform:translate(-50%,-50%);width:min(380px,36vw);height:430px;z-index:0;pointer-events:none}
+.hcards{position:relative;width:100%;height:100%}
+.hcard{position:absolute;width:224px;pointer-events:auto;background:linear-gradient(180deg,rgba(30,33,40,0.82),rgba(18,20,24,0.82));border:1px solid var(--line);border-radius:18px;padding:17px 19px 16px;box-shadow:0 26px 56px -30px rgba(0,0,0,.75),inset 0 1px 0 rgba(255,255,255,0.05);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s}
+.hcard:hover{transform:translateY(-7px);box-shadow:0 38px 76px -28px rgba(0,0,0,.85),inset 0 1px 0 rgba(255,255,255,0.07);border-color:color-mix(in srgb,var(--accent) 50%,var(--line))}
+.hcard__top{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--tx-3)}
+.hcard__top .hdot{width:7px;height:7px;border-radius:50%;background:var(--accent,var(--lime));flex-shrink:0;box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 20%,transparent)}
+.hcard__big{font-family:var(--serif);font-weight:600;font-size:39px;letter-spacing:-.02em;line-height:1;margin-top:10px;color:var(--tx);font-variant-numeric:tabular-nums}
+.hcard__big small{font-size:19px;font-weight:600;color:var(--tx-2)}
+.hcard__trend{margin-top:9px;font-size:12.5px;font-weight:700;color:var(--accent,var(--lime));display:flex;align-items:center;gap:5px}
+.hcard__spark{margin-top:13px;width:100%;height:46px;display:block;overflow:visible}
+.hcard__spark .ar{fill:var(--accent,var(--lime));opacity:.14}
+.hcard__spark .ln{fill:none;stroke:var(--accent,var(--lime));stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 4px 8px color-mix(in srgb,var(--accent) 35%,transparent))}
+.hcard__spark .dt{fill:var(--accent,var(--lime));transform-box:fill-box;transform-origin:center;transition:transform .4s var(--ease)}
+.hcard__spark .dth{fill:var(--accent,var(--lime));opacity:.22;transform-box:fill-box;transform-origin:center;transition:transform .4s var(--ease)}
+.hcard:hover .dt{transform:scale(1.25)}
+.hcard:hover .dth{transform:scale(1.7)}
+.hcard--a{top:1%;left:-9%;--accent:var(--lime)}
+.hcard--b{top:37%;right:-13%;--accent:var(--blue)}
+.hcard--c{bottom:-1%;left:3%;--accent:var(--orange)}
+.hero__text{max-width:640px}
+.hero h1{font-size:clamp(38px,5.4vw,64px);font-weight:600;letter-spacing:-0.02em;line-height:1.06}
+.hero__sub{margin-top:26px;max-width:520px;font-size:clamp(16px,1.6vw,19px);color:var(--tx-2);line-height:1.65}
+.hero__actions{margin-top:36px;display:flex;gap:13px;flex-wrap:wrap}
+.hero__trust{margin-top:24px;font-size:13.5px;color:var(--tx-3);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.hero__trust b{color:var(--tx-2);font-weight:600}
+.dot{width:3px;height:3px;border-radius:50%;background:currentColor;display:inline-block;opacity:.6}
+@media (max-width:820px){.hero{min-height:auto;padding:150px 0 70px}.hero-art{position:relative;top:auto;left:auto;transform:none;width:100%;height:auto;margin-top:36px}.hero .wrap{position:relative}.hcards{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}.hcard{position:relative!important;inset:auto!important;transform:none!important;animation:none!important;width:calc(50% - 6px);min-width:158px}.hcard--b{margin-top:0}}
+@media (max-width:430px){.hcard{width:100%}}
+
+/* BANDEAU CHIFFRES */
+.kfbar{max-width:840px;margin:0 auto;overflow:hidden;padding:18px 0;white-space:nowrap;-webkit-mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent);mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent)}
+.kfbar__track{display:inline-flex;align-items:center;animation:scrollx 22s linear infinite;will-change:transform}
+.kf{display:inline-flex;align-items:baseline;gap:9px;padding:0 26px;font-size:17px;color:var(--tx-2)}
+.kf b{font-size:25px;font-weight:900;letter-spacing:-0.02em;color:var(--tx);font-variant-numeric:tabular-nums}
+.kf::after{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--lime);margin-left:26px}
+@keyframes scrollx{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.kfbar__track{animation:none}}
+
+/* MÉTHODE — 3 cartes compactes, sans fond coloré, anim à droite */
+.cstack{display:flex;flex-direction:column;gap:18px;perspective:1700px;max-width:880px;margin-left:auto;margin-right:auto}
+.feat{position:relative;display:grid;grid-template-columns:1.55fr 0.65fr;background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--line-2);border-radius:20px;overflow:hidden;box-shadow:0 22px 44px -34px rgba(0,0,0,0.5);transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s;transform-style:preserve-3d;will-change:transform}
+.feat::after{content:"";position:absolute;inset:0;border-radius:20px;pointer-events:none;background:radial-gradient(120% 80% at 85% 0%,color-mix(in srgb,var(--accent) 12%,transparent),transparent 60%);opacity:0;transition:opacity .45s var(--ease)}
+.feat:hover{transform:translateY(-6px) rotateX(2.4deg) rotateY(-1.6deg);box-shadow:0 46px 80px -44px rgba(0,0,0,.62),0 12px 32px -22px rgba(0,0,0,.45);border-color:color-mix(in srgb,var(--accent) 38%,var(--line))}
+.feat:hover::after{opacity:1}
+.feat--flip{grid-template-columns:0.65fr 1.55fr}
+.feat--flip .feat__side{order:-1}
+.feat--flip:hover{transform:translateY(-6px) rotateX(2.4deg) rotateY(1.6deg)}
+.feat__body{padding:26px 32px;display:flex;flex-direction:column;justify-content:center}
+.feat__side{position:relative;display:flex;align-items:center;justify-content:center;padding:18px;overflow:hidden}
+.badge{display:inline-block;align-self:flex-start;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:var(--lime);padding:4px 10px;border-radius:999px;margin-bottom:12px}
+.feat__lbl{font-family:var(--serif);font-style:italic;font-size:16px;font-weight:600;letter-spacing:0;text-transform:none;margin-bottom:4px;color:var(--accent)}
+.feat__t{font-family:var(--serif);font-size:clamp(20px,2vw,25px);font-weight:600;letter-spacing:-0.01em;margin-bottom:8px}
+.feat__b{color:var(--tx-2);font-size:14.5px;line-height:1.6;max-width:46ch}
+.feat--lime{--accent:var(--lime-deep)} .feat--orange{--accent:var(--orange)} .feat--blue{--accent:var(--blue)} .feat--terrain{--accent:var(--orange)}
+@media (max-width:760px){.feat,.feat--flip{grid-template-columns:1fr;transform:none!important}.feat__side,.feat--flip .feat__side{order:0;border-left:none;border-top:1px solid var(--line-2);min-height:120px}}
+
+/* pictos line-art par offre — même langage de tracé (stroke fin, bouts ronds, grille 24),
+   couleur = --accent. Statique et lisible au repos ; le tracé se redessine au survol. */
+.fico{width:84px;height:84px;display:block;overflow:visible;transition:transform .5s var(--ease)}
+.feat:hover .fico{transform:scale(1.06)}
+.fico [data-draw]{fill:none;stroke:var(--accent);stroke-width:1.85;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;stroke-dasharray:1.6 0.4;animation:fdraw 4s linear infinite}
+.fico [data-draw]:nth-of-type(2){animation-delay:-0.36s}
+.fico [data-draw]:nth-of-type(3){animation-delay:-0.72s}
+.fico [data-draw]:nth-of-type(4){animation-delay:-1.08s}
+.fico [data-draw]:nth-of-type(5){animation-delay:-1.44s}
+.fico [data-draw]:nth-of-type(6){animation-delay:-1.8s}
+.fico [data-draw]:nth-of-type(7){animation-delay:-2.16s}
+.fico .dot{fill:var(--accent);stroke:none}
+@keyframes fdraw{0%{stroke-dashoffset:1}50%{stroke-dashoffset:0}100%{stroke-dashoffset:-1}}
+@media (prefers-reduced-motion:reduce){.fico [data-draw]{animation:none;stroke-dasharray:none}}
+/* puces + chips de canaux des offres */
+.feat__pts{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}
+.feat__pts li{position:relative;padding-left:24px;font-size:14px;color:var(--tx-2);line-height:1.45}
+.feat__pts li::before{content:"";position:absolute;left:2px;top:7px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.chip{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--tx-2);border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+.chip::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime)}
+.chip--mail::before{background:var(--orange)}.chip--in::before{background:var(--blue)}.chip--geo::before{background:var(--orange)}
+
+/* PROCESS — 4 colonnes épurées */
+.proc4{display:grid;grid-template-columns:repeat(4,1fr)}
+.pcol{padding:6px 28px;border-right:1px solid var(--line)}
+.pcol:first-child{padding-left:0}.pcol:last-child{border-right:none;padding-right:0}
+.pcol__n{font-family:var(--serif);font-size:46px;font-weight:600;letter-spacing:-0.02em;line-height:1;color:rgba(243,244,246,0.45);font-variant-numeric:tabular-nums}
+.pcol__t{font-size:18px;font-weight:800;letter-spacing:-0.01em;margin-top:16px}
+.pcol__b{color:var(--tx-2);font-size:14.5px;line-height:1.6;margin-top:8px}
+.pcol__cta{display:inline-flex;align-items:center;gap:7px;margin-top:14px;font-size:13.5px;font-weight:700;color:var(--tx);cursor:pointer;background:none;border:none;font-family:inherit;padding:0}
+.pcol__cta:hover .arrow{transform:translateX(3px)}
+.pcol--audit .pcol__n{color:var(--lime-deep)}
+@media (max-width:760px){.proc4{grid-template-columns:1fr 1fr;gap:32px 0}.pcol{padding:6px 22px}.pcol:nth-child(odd){padding-left:0}.pcol:nth-child(even){border-right:none;padding-right:0}}
+@media (max-width:430px){.proc4{grid-template-columns:1fr}.pcol{border-right:none;padding:0;border-top:1px solid var(--line);padding-top:24px}.pcol:first-child{border-top:none;padding-top:0}}
+
+/* ÉQUIPE */
+.team-layout{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center}
+.team-intro h2{font-size:clamp(29px,3.5vw,42px);font-weight:600;letter-spacing:-0.02em;margin-bottom:20px}
+.team-intro p{color:var(--tx-2);font-size:16.5px;line-height:1.75;max-width:46ch;margin-bottom:16px}
+.team-intro p b{color:var(--tx);font-weight:600}
+.team-flag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;color:var(--tx-2);background:var(--surface);border:1px solid var(--line);padding:8px 15px;border-radius:999px;margin-top:6px}
+.founders{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s}
+.fcard:hover{transform:translateY(-4px);box-shadow:0 26px 48px -34px rgba(20,22,26,0.32)}
+.fcard__ph{aspect-ratio:1/1;overflow:hidden;background:var(--surface-2)}
+.fcard__ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.fcard:hover .fcard__ph img{transform:scale(1.04)}
+.fcard__body{padding:14px 16px 18px}
+.fcard__name{font-size:16px;font-weight:900;letter-spacing:-0.02em}
+.fcard__role{font-family:var(--mono);font-size:11.5px;color:var(--tx-3);margin-top:2px}
+@media (max-width:880px){.team-layout{grid-template-columns:1fr;gap:36px}.founders{max-width:420px}}
+
+/* FAQ */
+.faqs{max-width:780px;margin:0 auto;border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{list-style:none;cursor:pointer;padding:24px 4px;font-size:17px;font-weight:700;letter-spacing:-0.01em;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--tx)}
+.faqs summary::-webkit-details-marker{display:none}
+.faqs .pm{position:relative;width:18px;height:18px;flex-shrink:0}
+.faqs .pm::before,.faqs .pm::after{content:"";position:absolute;background:var(--tx-2);border-radius:2px;transition:transform .3s var(--ease)}
+.faqs .pm::before{top:8px;left:0;width:18px;height:2px}
+.faqs .pm::after{top:0;left:8px;width:2px;height:18px}
+.faqs details[open] .pm::after{transform:rotate(90deg);opacity:0}
+.faqs details p{padding:0 4px 24px;color:var(--tx-2);font-size:15px;line-height:1.7;max-width:66ch}
+
+/* CTA */
+.cta__box{position:relative;overflow:hidden;background:var(--surface-2);border:1px solid var(--line);color:#fff;border-radius:28px;padding:74px 40px;text-align:center;max-width:900px;margin:0 auto;box-shadow:0 40px 80px -50px rgba(20,22,26,0.6)}
+.cta__inner{position:relative;z-index:2;max-width:620px;margin:0 auto}
+.cta h2{font-size:clamp(31px,4.3vw,50px);font-weight:600;letter-spacing:-0.02em;color:#fff}
+.cta h2 .hl{color:#fff}
+.cta h2 .hl::after{background:var(--lime)}
+.cta p{color:rgba(255,255,255,0.7);margin:20px auto 34px;max-width:46ch;font-size:17px}
+.cta .fine{margin-top:18px;font-family:var(--mono);font-size:12.5px;color:rgba(255,255,255,0.5);letter-spacing:.04em}
+
+/* FOOTER */
+.foot{border-top:1px solid var(--line);padding:46px 0}
+.foot__in{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot .brand{font-weight:900;font-size:18px;letter-spacing:-0.03em}
+.foot .brand .pt{color:var(--lime)}
+.foot__links{display:flex;gap:24px;flex-wrap:wrap}
+.foot__links a{font-size:14px;color:var(--tx-2);transition:color .2s}
+.foot__links a:hover{color:var(--tx)}
+.foot__copy{font-size:13px;color:var(--tx-3);width:100%;border-top:1px solid var(--line-2);padding-top:22px;margin-top:8px;display:flex;flex-direction:column;gap:14px}
+.foot__legal{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center}
+.foot__legal a,.foot__legal button{font-size:13px;color:var(--tx-2);background:none;border:none;padding:0;font-family:inherit;cursor:pointer;transition:color .2s}
+.foot__legal a:hover,.foot__legal button:hover{color:var(--tx);text-decoration:underline}
+
+/* ── COOKIES (RGPD / ePrivacy) ── */
+.cookie{position:fixed;left:0;right:0;bottom:0;z-index:1100;display:none;padding:16px;justify-content:center}
+.cookie.open{display:flex}
+.cookie__box{width:100%;max-width:1040px;background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:0 30px 70px -30px rgba(20,22,26,.4);padding:20px 22px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.cookie__txt{flex:1;min-width:260px;font-size:14px;color:var(--tx-2);line-height:1.55}
+.cookie__txt b{color:var(--tx)}
+.cookie__txt a{color:var(--tx);text-decoration:underline}
+.cookie__actions{display:flex;gap:10px;flex-wrap:wrap}
+.cookie__actions .abtn{padding:11px 18px;font-size:14px}
+.cookie__set{margin-top:16px;display:none;flex-basis:100%;border-top:1px solid var(--line-2);padding-top:16px}
+.cookie.settings .cookie__set{display:block}
+.cookie.settings .cookie__actions .js-ck-accept{display:none}
+.ckrow{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line-2)}
+.ckrow:last-child{border-bottom:none}
+.ckrow b{font-size:14px}.ckrow span{font-size:12.5px;color:var(--tx-3);display:block;margin-top:2px}
+.ckrow .ck-on{font-family:var(--mono);font-size:11px;color:var(--tx-3)}
+.cksw{position:relative;width:42px;height:24px;flex-shrink:0}
+.cksw input{opacity:0;width:100%;height:100%;margin:0;cursor:pointer}
+.cksw i{position:absolute;inset:0;background:var(--line);border-radius:999px;transition:.2s;pointer-events:none}
+.cksw i::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.2s}
+.cksw input:checked+i{background:var(--lime)}
+.cksw input:checked+i::after{transform:translateX(18px)}
+.cksw input:disabled+i{opacity:.6}
+
+/* ── AUDIT INTERACTIF (modale) ── */
+.audit{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:18px}
+.audit.open{display:flex}
+.audit__ov{position:absolute;inset:0;background:rgba(14,16,21,.55);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);animation:afade .3s ease}
+.audit__panel{position:relative;z-index:1;width:100%;max-width:660px;max-height:94vh;display:flex;flex-direction:column;background:var(--surface);border-radius:24px;box-shadow:0 60px 130px -40px rgba(20,22,26,.7);overflow:hidden;animation:apop .45s var(--ease-expo)}
+@keyframes apop{from{opacity:0;transform:translateY(22px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes afade{from{opacity:0}to{opacity:1}}
+.audit__top{display:flex;align-items:center;gap:16px;padding:16px 20px;border-bottom:1px solid var(--line-2)}
+.audit__logo{font-weight:900;font-size:16px;letter-spacing:-.03em}.audit__logo .pt{color:var(--lime)}
+.audit__bar{flex:1;height:6px;border-radius:999px;background:var(--line)}
+.audit__bar span{display:block;height:100%;width:0%;border-radius:999px;background:var(--lime);transition:width .45s var(--ease)}
+.audit__close{flex-shrink:0;width:34px;height:34px;border:none;background:none;font-size:24px;line-height:1;color:var(--tx-2);border-radius:50%;cursor:pointer}
+.audit__close:hover{background:var(--surface-2);color:var(--tx)}
+.audit__stage{padding:30px 30px 32px;overflow-y:auto}
+.astep{animation:aslide .4s var(--ease)}
+@keyframes aslide{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+.astep__k{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--tx-3)}
+.astep__q{font-family:var(--serif);font-size:clamp(21px,2.4vw,26px);font-weight:600;letter-spacing:-.01em;margin:8px 0 18px;line-height:1.18}
+.aopt{display:block;width:100%;text-align:left;border:1px solid var(--line);background:var(--surface-2);border-radius:14px;padding:15px 18px;margin-bottom:11px;font:inherit;font-size:15px;color:var(--tx);cursor:pointer;transition:border-color .2s,transform .2s,box-shadow .2s}
+.aopt:hover{border-color:var(--tx);transform:translateY(-2px);box-shadow:0 14px 30px -22px rgba(20,22,26,.5)}
+.aopt.sel{border-color:var(--lime-deep);box-shadow:0 0 0 3px rgba(255,67,41,.3)}
+.alead{color:var(--tx-2);font-size:15px;line-height:1.6;margin:-10px 0 22px;max-width:52ch}
+.afield{margin-bottom:15px}
+.afield label{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
+.afield .hint{font-weight:400;color:var(--tx-3)}
+.afield input,.afield textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:13px 14px;font:inherit;font-size:15px;background:var(--surface-2);color:#fff}
+.afield input::placeholder,.afield textarea::placeholder{color:rgba(255,255,255,.42)}
+.afield textarea{resize:vertical;min-height:84px;line-height:1.5}
+.afield input:focus,.afield textarea:focus{outline:none;border-color:var(--tx);box-shadow:0 0 0 3px rgba(20,22,26,.06)}
+.arow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.aactions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:22px}
+.abtn{display:inline-flex;align-items:center;gap:8px;background:var(--lime);color:var(--ink);font-weight:700;border:none;border-radius:12px;padding:13px 24px;font:inherit;font-size:15px;cursor:pointer;transition:background .2s,transform .2s}
+.audit .abtn{color:#fff}
+.abtn:hover{background:var(--lime-deep);transform:translateY(-2px)}
+.abtn--ghost{background:transparent;border:1px solid var(--line);color:var(--tx)}
+.abtn--ghost:hover{background:var(--surface-2);border-color:var(--tx)}
+.abtn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
+/* résultat */
+.ares__gauge{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:8px}
+.gwrap{position:relative;width:180px;height:180px}
+.gwrap svg{transform:rotate(-90deg)}
+.gbg{fill:none;stroke:var(--line);stroke-width:14}
+.gfg{fill:none;stroke:url(#agrad);stroke-width:14;stroke-linecap:round;transition:stroke-dashoffset 1.3s var(--ease-expo)}
+.ares__head{text-align:center;margin-bottom:8px}
+.ares__k{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-3)}
+.gctr{position:absolute;inset:0;display:flex;flex-direction:column;gap:1px;align-items:center;justify-content:center}
+.gctr .nw{display:inline-flex;align-items:baseline;gap:3px}
+.gctr b{font-size:46px;font-weight:900;letter-spacing:-.03em;line-height:1}
+.gctr em{font-style:normal;font-size:20px;font-weight:700;color:var(--tx-3)}
+.ares__lvl{text-align:center;margin-top:16px}
+.lvlpill{display:inline-block;font-weight:800;font-size:14px;padding:7px 16px;border-radius:999px}
+.lvl-good{background:var(--lime);color:var(--ink)}
+.lvl-mid{background:rgba(217,112,26,.14);color:var(--orange)}
+.lvl-low{background:rgba(229,72,77,.12);color:#E5484D}
+.ares__sum{text-align:center;color:var(--tx-2);font-size:15px;line-height:1.6;margin:12px auto 0;max-width:46ch}
+.ares__sum b{color:var(--tx)}
+.ares__h{font-size:13px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;color:var(--tx-3);margin:28px 0 14px}
+.axline{margin-bottom:14px}
+.axline__top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:6px}
+.axline__t{font-weight:700;font-size:14.5px}
+.axline__s{font-family:var(--mono);font-size:13px;font-weight:600}
+.axbar{height:8px;border-radius:999px;background:var(--line);overflow:hidden}
+.axbar i{display:block;height:100%;width:0;border-radius:999px;transition:width 1s var(--ease) .2s}
+.axline__m{font-size:13px;color:var(--tx-2);margin-top:5px;line-height:1.5}
+.s-good i{background:var(--lime)}.s-good .axline__s{color:var(--lime-deep)}
+.s-mid i{background:var(--orange)}.s-mid .axline__s{color:var(--orange)}
+.s-low i{background:#E5484D}.s-low .axline__s{color:#E5484D}
+.roigrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+.roicard{background:var(--surface-2);border-radius:14px;padding:16px 18px}
+.roicard b{display:block;font-size:24px;font-weight:900;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.roicard span{font-size:12.5px;color:var(--tx-3)}
+.roicard--hl{background:var(--ink);color:#fff;grid-column:1/-1}
+.roicard--hl span{color:rgba(255,255,255,.6)}
+.roicard--hl b{color:var(--lime)}
+/* audit — 2 questions par écran */
+.aq{margin-bottom:22px}
+.aq__lbl{font-weight:700;font-size:15.5px;letter-spacing:-.01em;color:var(--tx);margin-bottom:12px;line-height:1.35}
+.aq__n{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--accent2,var(--lime-deep));margin-right:8px}
+.aq .aopt{margin-bottom:9px;font-size:14.5px;padding:13px 16px}
+.aq .aopt:last-child{margin-bottom:0}
+/* résultat — héros KPI ROI */
+.ares__hero{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:6px 0 8px}
+.kpi{position:relative;background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-radius:16px;padding:16px 18px;overflow:hidden}
+.kpi b{display:block;font-family:var(--serif);font-size:30px;font-weight:600;letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums;color:var(--tx)}
+.kpi span{display:block;margin-top:7px;font-size:12.5px;line-height:1.42;color:var(--tx-3)}
+.kpi--hero{grid-column:1/-1;background:linear-gradient(180deg,rgba(255,67,41,.16),var(--surface));border-color:color-mix(in srgb,var(--lime) 42%,var(--line))}
+.kpi--hero b{font-size:48px}
+.kpi--hero span{color:var(--tx-2);font-size:13.5px}
+.kpi--wide{grid-column:1/-1;background:var(--ink)}
+.kpi--wide b{color:var(--lime);font-size:25px}
+.kpi--wide span{color:rgba(255,255,255,.7)}
+.gsub{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--tx-3);margin-top:3px}
+.axwarn{display:inline-block;margin-left:8px;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--orange);border:1px solid color-mix(in srgb,var(--orange) 42%,transparent);border-radius:999px;padding:2px 7px;vertical-align:middle}
+.ares__cta{margin-top:24px;text-align:center}
+.ares__fine{font-family:var(--mono);font-size:11.5px;color:var(--tx-3);margin-top:10px}
+@media (max-width:520px){.audit__stage{padding:24px 20px 26px}.arow,.roigrid{grid-template-columns:1fr}.roicard--hl{grid-column:auto}}
+
+/* RESPONSIVE */
+@media (max-width:900px){section{padding:88px 0}}
+@media (max-width:520px){.wrap{padding:0 20px}.hero__actions .btn{flex:1 1 auto;justify-content:center}}
+</style>
+</head>
+<body>
+
+<!-- SPRITE : formes organiques 3D recréées en lime (dégradés) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="scuG" x1="0.15" y1="0.05" x2="0.85" y2="1">
+    <stop offset="0%" stop-color="#FFC2B3"/><stop offset="34%" stop-color="#FF4329"/><stop offset="72%" stop-color="#B5260F"/><stop offset="100%" stop-color="#3a0f08"/>
+  </linearGradient>
+  <linearGradient id="ribG" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#FF8A6E"/><stop offset="46%" stop-color="#FF4329"/><stop offset="100%" stop-color="#8c1d0c"/>
+  </linearGradient>
+  <radialGradient id="glo" cx="34%" cy="22%" r="42%">
+    <stop offset="0%" stop-color="#ffffff" stop-opacity=".65"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+  </radialGradient>
+  <symbol id="sculpt" viewBox="0 0 320 470">
+    <path d="M185 28 C 248 32 268 110 230 158 C 208 196 168 206 162 244 C 156 286 190 304 198 344 C 208 398 168 440 114 432 C 62 424 54 360 94 338 C 132 316 152 284 142 244 C 132 198 118 150 150 96 C 164 64 150 40 185 28 Z" fill="url(#scuG)"/>
+    <ellipse cx="150" cy="104" rx="46" ry="62" fill="url(#glo)"/>
+  </symbol>
+  <symbol id="ribbon" viewBox="0 0 200 180">
+    <path d="M44 92 C 22 44 86 14 138 34 C 198 58 206 122 166 160 C 128 196 50 186 38 138 C 33 120 39 104 44 92 Z" fill="url(#ribG)"/>
+    <ellipse cx="86" cy="64" rx="30" ry="22" fill="url(#glo)"/>
+  </symbol>
+</defs></svg>
+
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo"><span class="nav-logo-text">Yvento<span class="pt">.</span></span></a>
+    <div class="nav-links"><a href="#methode">Méthode</a><a href="#process">Process</a><a href="#equipe">Équipe</a><a href="#faq">FAQ</a></div>
+    <button class="btn-filled-sm js-book" type="button">Réserver un rendez-vous</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-art" aria-hidden="true">
+    <div class="hcards">
+      <div class="hcard hcard--a">
+        <div class="hcard__top"><span class="hdot"></span>Taux de réponse</div>
+        <div class="hcard__big">31<small>%</small></div>
+        <div class="hcard__trend"><span>↑</span> +19 pts en 6 semaines</div>
+        <svg class="hcard__spark" viewBox="0 0 200 60" preserveAspectRatio="none">
+          <path class="ar" d="M0 48 C 34 46 50 40 74 37 C 98 34 116 24 140 20 C 164 16 178 9 200 6 L200 60 L0 60 Z"/>
+          <path class="ln" d="M0 48 C 34 46 50 40 74 37 C 98 34 116 24 140 20 C 164 16 178 9 200 6"/>
+          <circle class="dth" cx="200" cy="6" r="5"/><circle class="dt" cx="200" cy="6" r="3.2"/>
+        </svg>
+      </div>
+      <div class="hcard hcard--b">
+        <div class="hcard__top"><span class="hdot"></span>RDV qualifiés / mois</div>
+        <div class="hcard__big">24<small> RDV</small></div>
+        <div class="hcard__trend"><span>↑</span> ×3 vs avant Yvento</div>
+        <svg class="hcard__spark" viewBox="0 0 200 60" preserveAspectRatio="none">
+          <path class="ar" d="M0 52 C 30 52 48 44 72 41 C 96 38 112 30 136 24 C 160 18 180 13 200 9 L200 60 L0 60 Z"/>
+          <path class="ln" d="M0 52 C 30 52 48 44 72 41 C 96 38 112 30 136 24 C 160 18 180 13 200 9"/>
+          <circle class="dth" cx="200" cy="9" r="5"/><circle class="dt" cx="200" cy="9" r="3.2"/>
+        </svg>
+      </div>
+      <div class="hcard hcard--c">
+        <div class="hcard__top"><span class="hdot"></span>Taux de conversion</div>
+        <div class="hcard__big">11,8<small>%</small></div>
+        <div class="hcard__trend"><span>↑</span> +64 % de pipeline</div>
+        <svg class="hcard__spark" viewBox="0 0 200 60" preserveAspectRatio="none">
+          <path class="ar" d="M0 50 C 28 50 48 45 70 38 C 92 31 114 31 136 23 C 158 15 178 11 200 5 L200 60 L0 60 Z"/>
+          <path class="ln" d="M0 50 C 28 50 48 45 70 38 C 92 31 114 31 136 23 C 158 15 178 11 200 5"/>
+          <circle class="dth" cx="200" cy="5" r="5"/><circle class="dt" cx="200" cy="5" r="3.2"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="hero__text">
+      <div class="eyebrow reveal">Agence de prospection commerciale B2B</div>
+      <h1 class="reveal d1">La prospection pour<br>améliorer <span class="hl">votre conversion.</span></h1>
+      <p class="hero__sub reveal d2">On s'occupe de la prospection. Ciblage précis, messages personnalisés, rendez-vous qualifiés. Vous, vous vendez.</p>
+      <div class="hero__actions reveal d2">
+        <button class="btn btn--accent js-audit" type="button">Prendre contact <span class="arrow">→</span></button>
+        <a href="#methode" class="btn btn--ghost">Voir la méthode</a>
+      </div>
+      <div class="hero__trust reveal d3"><span>Premier échange gratuit</span><span class="dot"></span><span>Sans engagement</span><span class="dot"></span><span>Réponse sous <b>24 h</b></span></div>
+    </div>
+  </div>
+</header>
+
+<!-- BANDEAU CHIFFRES -->
+<div class="kfbar" aria-hidden="true">
+  <div class="kfbar__track">
+    <span class="kf"><b>3</b> canaux maîtrisés</span><span class="kf"><b>24 h</b> de réponse</span><span class="kf"><b>100 %</b> sur-mesure</span><span class="kf"><b>0 €</b> le premier échange</span>
+    <span class="kf"><b>3</b> canaux maîtrisés</span><span class="kf"><b>24 h</b> de réponse</span><span class="kf"><b>100 %</b> sur-mesure</span><span class="kf"><b>0 €</b> le premier échange</span>
+  </div>
+</div>
+
+<!-- MÉTHODE -->
+<section class="chan" id="methode">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow">Notre approche</div>
+      <h2 class="title">Trois façons de remplir <em>votre pipeline.</em></h2>
+      <p class="lead" style="margin-top:18px">On ne vend pas du volume. On construit une base ultra-ciblée sur votre ICP, on active les bons canaux et on mesure tout en temps réel. À vous de choisir l'intensité. L'obsession de la qualité, c'est nous qui la gardons.</p>
+    </div>
+    <div class="cstack">
+
+      <!-- Bundle Acquisition -->
+      <article class="feat feat--lime reveal d1">
+        <div class="feat__body">
+          <div class="feat__lbl">Bundle Acquisition</div>
+          <div class="feat__t">Construire un pipeline de zéro</div>
+          <p class="feat__b">Pour les SaaS B2B sans SDR : on pose les fondations : une base ultra-ciblée et des appels structurés qui décrochent des RDV décideurs dès les premières semaines.</p>
+          <ul class="feat__pts">
+            <li>Base de 100 contacts sur votre ICP (poste, email, tél. direct)</li>
+            <li>Prospection téléphonique avec script sur-mesure</li>
+            <li>Dashboard de pilotage + reporting hebdomadaire</li>
+          </ul>
+          <div class="chips"><span class="chip chip--phone">Téléphone</span></div>
+        </div>
+        <div class="feat__side"><svg class="fico" viewBox="0 0 24 24" aria-hidden="true">
+          <path data-draw pathLength="1" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          <path data-draw pathLength="1" d="M15.05 5A5 5 0 0 1 19 8.95"/>
+          <path data-draw pathLength="1" d="M15.05 1A9 9 0 0 1 23 8.94"/>
+        </svg></div>
+      </article>
+
+      <!-- Bundle Growth -->
+      <article class="feat feat--blue feat--flip reveal d2">
+        <div class="feat__body">
+          <div class="feat__lbl">Bundle Growth</div>
+          <div class="feat__t">Activer l'outbound multicanal</div>
+          <p class="feat__b">Pour une équipe en place au pipeline insuffisant : on touche chaque prospect par téléphone, email et LinkedIn dans le même cycle, coordonné et mesurable, sans recruter de SDR.</p>
+          <ul class="feat__pts">
+            <li>Base de 200 contacts ciblés</li>
+            <li>Téléphone + email + LinkedIn coordonnés sur les mêmes cibles</li>
+            <li>Dashboard unifié (KPIs par canal, taux de réponse, RDV) + recommandations</li>
+          </ul>
+          <div class="chips"><span class="chip chip--phone">Téléphone</span><span class="chip chip--mail">Email</span><span class="chip chip--in">LinkedIn</span></div>
+        </div>
+        <div class="feat__side"><svg class="fico" viewBox="0 0 24 24" aria-hidden="true">
+          <path data-draw pathLength="1" d="M7.4 11 L16.6 6.2"/>
+          <path data-draw pathLength="1" d="M7.5 12 H16.5"/>
+          <path data-draw pathLength="1" d="M7.4 13 L16.6 17.8"/>
+          <circle data-draw pathLength="1" cx="5" cy="12" r="2.6"/>
+          <circle data-draw pathLength="1" cx="19" cy="5" r="2.6"/>
+          <circle data-draw pathLength="1" cx="19" cy="12" r="2.6"/>
+          <circle data-draw pathLength="1" cx="19" cy="19" r="2.6"/>
+          <circle class="dot" cx="5" cy="12" r="1"/>
+        </svg></div>
+      </article>
+
+      <!-- Bundle Terrain -->
+      <article class="feat feat--terrain reveal d3">
+        <div class="feat__body">
+          <div class="feat__lbl">Bundle Terrain</div>
+          <div class="feat__t">Gagner les marchés de terrain</div>
+          <p class="feat__b">Pour les marchés que le digital n'atteint pas : un commercial sur le terrain en Occitanie, une méthode structurée et un suivi chiffré. On crée la relation avant de pitcher.</p>
+          <ul class="feat__pts">
+            <li>Base de 100 contacts par zone (adresses incluses), tournées optimisées</li>
+            <li>Pitch + qualification sur place (besoin, décideur, timing)</li>
+            <li>Compte-rendu sous 24 h, CRM à jour + dashboard de transformation</li>
+          </ul>
+          <div class="chips"><span class="chip chip--geo">Terrain</span><span class="chip chip--geo">Occitanie</span></div>
+        </div>
+        <div class="feat__side"><svg class="fico" viewBox="0 0 24 24" aria-hidden="true">
+          <path data-draw pathLength="1" d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle data-draw pathLength="1" cx="12" cy="10" r="3"/>
+        </svg></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow">Process</div>
+      <h2 class="title">En 4 étapes, <em>on remplit votre agenda.</em></h2>
+    </div>
+    <div class="proc4 reveal d1">
+      <div class="pcol pcol--audit">
+        <div class="pcol__n">01</div>
+        <div class="pcol__t">Premier échange</div>
+        <div class="pcol__b">On analyse votre cible, votre offre et vos objectifs. Sans engagement.</div>
+        <button type="button" class="pcol__cta js-audit">Laisser mes coordonnées <span class="arrow">→</span></button>
+      </div>
+      <div class="pcol"><div class="pcol__n">02</div><div class="pcol__t">Proposition</div><div class="pcol__b">Un plan et un tarif ajustés à votre situation. Jamais de package standard.</div></div>
+      <div class="pcol"><div class="pcol__n">03</div><div class="pcol__t">Lancement</div><div class="pcol__b">On construit les listes ultra-ciblées et on lance la prospection multicanale.</div></div>
+      <div class="pcol"><div class="pcol__n">04</div><div class="pcol__t">Rendez-vous</div><div class="pcol__b">Vous recevez des conversations commerciales prêtes à closer. Vous vendez.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ÉQUIPE -->
+<section class="team" id="equipe">
+  <div class="wrap">
+    <div class="team-layout">
+      <div class="team-intro reveal">
+        <div class="eyebrow">L'équipe</div>
+        <h2>Une agence <span class="hl">complète.</span></h2>
+        <p>Yvento réunit des <b>prospecteurs dédiés</b>, un pôle opérations et un vrai savoir-faire en <b>digitalisation des process</b>. On combine l'humain du cold call et la puissance de l'automatisation.</p>
+        <p>Aux commandes, <b>deux cofondateurs</b> complémentaires : la stratégie &amp; le growth d'un côté, les opérations &amp; le terrain de l'autre.</p>
+        <div class="team-flag"><span>🇫🇷</span> Basé en France</div>
+      </div>
+      <!-- TODO: enregistrer les 2 photos jointes dans assets/ : photo 1 (toi) → kylian.png · photo 2 (Florian) → florian.png -->
+      <div class="founders reveal d1">
+        <article class="fcard">
+          <div class="fcard__ph"><img src="assets/kylian.png" alt="Kylian, cofondateur Yvento" loading="lazy"></div>
+          <div class="fcard__body"><div class="fcard__name">Kylian</div><div class="fcard__role">Stratégie &amp; Growth</div></div>
+        </article>
+        <article class="fcard">
+          <div class="fcard__ph"><img src="assets/florian.png" alt="Florian, cofondateur Yvento" loading="lazy"></div>
+          <div class="fcard__body"><div class="fcard__name">Florian</div><div class="fcard__role">Opérations &amp; Prospection</div></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow">Questions fréquentes</div>
+      <h2 class="title">Ce que vous <em>nous demandez</em></h2>
+    </div>
+    <div class="faqs reveal d1">
+      <details><summary>Sous combien de temps les premiers rendez-vous ?<span class="pm"></span></summary><p>Les premières conversations arrivent en général dans les premières semaines après le lancement. On privilégie la qualité à la vitesse : un bon prospect un peu plus tard vaut mieux qu'un agenda rempli de rendez-vous inutiles.</p></details>
+      <details><summary>C'est quoi un rendez-vous qualifié ?<span class="pm"></span></summary><p>Un rendez-vous avec un décideur dans votre cible, qui a un besoin potentiel et a accepté l'échange. On définit les critères avec vous en amont, pour que chaque rendez-vous ait une vraie chance de closer.</p></details>
+      <details><summary>Quels secteurs adressez-vous ?<span class="pm"></span></summary><p>Tous les secteurs B2B. L'approche s'adapte à votre marché : c'est le rôle du premier échange que de cadrer votre cible précise avant de démarrer.</p></details>
+      <details><summary>Y a-t-il un engagement ?<span class="pm"></span></summary><p>Le premier échange est gratuit et sans engagement. Pour la prestation, les modalités sont fixées dans la proposition qui en découle, adaptées à votre situation.</p></details>
+      <details><summary>En quoi êtes-vous différents ?<span class="pm"></span></summary><p>La plupart vendent du volume et de l'automatisation. Nous vendons des conversations. Ciblage précis, cold call au cœur de la méthode, messages personnalisés, et un échange de cadrage avant toute proposition.</p></details>
+      <details><summary>Comment se passe le premier échange ?<span class="pm"></span></summary><p>Un échange de cadrage : on découvre votre offre, votre cible et vos objectifs. On analyse, puis on revient avec une proposition précise. Aucune obligation.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <div class="cta__box reveal">
+      <div class="cta__inner">
+        <h2>Prêt à améliorer <span class="hl">votre conversion</span> ?</h2>
+        <p>Un premier échange gratuit pour commencer. On analyse, on propose, on lance.</p>
+        <button class="btn btn--accent js-audit" type="button">Prendre contact <span class="arrow">→</span></button>
+        <div class="fine">Premier échange gratuit · Sans engagement · Réponse sous 24 h</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIT INTERACTIF (modale) -->
+<div class="audit" id="audit" aria-hidden="true">
+  <div class="audit__ov" data-close></div>
+  <div class="audit__panel" role="dialog" aria-modal="true" aria-label="Prise de contact">
+    <div class="audit__top" style="justify-content:space-between">
+      <span class="audit__logo">Yvento<span class="pt">.</span></span>
+      <button class="audit__close" data-close type="button" aria-label="Fermer">×</button>
+    </div>
+    <div class="audit__stage" id="auditStage"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap foot__in">
+    <a href="#top" class="brand">Yvento<span class="pt">.</span></a>
+    <div class="foot__links"><a href="#methode">Méthode</a><a href="#process">Process</a><a href="#equipe">Équipe</a><a href="#faq">FAQ</a><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+    <div class="foot__copy">
+      <div class="foot__legal">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Politique de confidentialité</a>
+        <a href="cookies.html">Politique cookies</a>
+        <a href="cgu.html">CGU</a>
+        <a href="cgv.html">CGV</a>
+        <button type="button" class="js-cookie-manage">Gérer les cookies</button>
+      </div>
+      <div>© 2026 Yvento · Agence de prospection commerciale B2B</div>
+    </div>
+  </div>
+</footer>
+
+<!-- BANDEAU COOKIES (RGPD / ePrivacy) -->
+<div class="cookie" id="cookie" role="dialog" aria-label="Gestion des cookies" aria-live="polite">
+  <div class="cookie__box">
+    <p class="cookie__txt"><b>On respecte votre vie privée.</b> On utilise des cookies pour faire fonctionner le site et, avec votre accord, mesurer l'audience et améliorer votre expérience. <a href="cookies.html">En savoir plus</a>.</p>
+    <div class="cookie__actions">
+      <button class="abtn abtn--ghost js-ck-refuse" type="button">Tout refuser</button>
+      <button class="abtn abtn--ghost js-ck-settings" type="button">Paramétrer</button>
+      <button class="abtn js-ck-accept" type="button">Tout accepter</button>
+    </div>
+    <div class="cookie__set">
+      <div class="ckrow"><div><b>Nécessaires</b><span>Indispensables au fonctionnement du site. Toujours actifs.</span></div><label class="cksw"><input type="checkbox" checked disabled><i></i></label></div>
+      <div class="ckrow"><div><b>Mesure d'audience</b><span>Statistiques anonymisées de fréquentation.</span></div><label class="cksw"><input type="checkbox" id="ck-stats"><i></i></label></div>
+      <div class="ckrow"><div><b>Marketing</b><span>Personnalisation et contenus tiers (ex. Calendly, réseaux sociaux).</span></div><label class="cksw"><input type="checkbox" id="ck-mkt"><i></i></label></div>
+      <div style="text-align:right;margin-top:14px"><button class="abtn js-ck-save" type="button">Enregistrer mes choix</button></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const CALENDLY_URL = "https://calendly.com/florian-laverdure-yvento/30min";
+/* ── Formulaire de contact ── */
+const FORM_ENDPOINT = "https://formspree.io/f/meeboope";  // Formspree (reçoit les coordonnées du formulaire en POST JSON)
+
+const nav=document.getElementById('mainNav');
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const pars=[...document.querySelectorAll('[data-par]')];
+let ticking=false;
+function frame(){
+  ticking=false;
+  nav.classList.toggle('scrolled',scrollY>40);
+  if(!reduce){pars.forEach(el=>{el.style.transform=`translateY(${scrollY*(+el.dataset.par)}px)`;});}
+}
+function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(frame);}}
+frame();addEventListener('scroll',onScroll,{passive:true});
+
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+setTimeout(()=>{document.querySelectorAll('.reveal:not(.in)').forEach(el=>el.classList.add('in'));},2600);
+
+let cReady=false;
+function loadCalendly(){return new Promise(res=>{
+  if(cReady&&window.Calendly)return res();
+  if(!document.querySelector('link[data-calendly]')){const l=document.createElement('link');l.rel='stylesheet';l.href='https://assets.calendly.com/assets/external/widget.css';l.setAttribute('data-calendly','');document.head.appendChild(l);}
+  const s=document.createElement('script');s.src='https://assets.calendly.com/assets/external/widget.js';s.async=true;s.onload=()=>{cReady=true;res();};document.body.appendChild(s);
+});}
+async function bookCalendly(){
+  if(CALENDLY_URL.includes('[À REMPLIR]')){alert("Réservation bientôt disponible.\n(Renseignez CALENDLY_URL en haut du <script> dans index.html)");return;}
+  await loadCalendly();window.Calendly.initPopupWidget({url:CALENDLY_URL});
+}
+
+/* ════════════ FORMULAIRE DE CONTACT ════════════ */
+const modal=document.getElementById('audit'),stage=document.getElementById('auditStage');
+function openContactModal(){modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';renderForm();}
+function closeContact(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+function renderForm(){
+  stage.innerHTML=`<div class="astep">
+    <div class="astep__k">Prise de contact</div>
+    <div class="astep__q">Parlons de votre prospection</div>
+    <p class="alead">Laissez-nous vos coordonnées et un mot sur votre besoin. On revient vers vous sous 24 h pour un premier échange gratuit et sans engagement.</p>
+    <form id="contactForm" novalidate>
+      <div class="arow">
+        <div class="afield"><label>Prénom &amp; nom</label><input name="nom" type="text" placeholder="Jean Dupont" required></div>
+        <div class="afield"><label>Email professionnel</label><input name="email" type="email" placeholder="jean@societe.fr" required></div>
+      </div>
+      <div class="arow">
+        <div class="afield"><label>Entreprise</label><input name="entreprise" type="text" placeholder="Votre société" required></div>
+        <div class="afield"><label>Téléphone</label><input name="tel" type="tel" placeholder="06 12 34 56 78" required></div>
+      </div>
+      <div class="afield"><label>Votre besoin <span class="hint">(optionnel)</span></label><textarea name="message" rows="3" placeholder="En quelques mots : votre cible, votre offre, vos objectifs…"></textarea></div>
+      <div class="aactions" style="justify-content:flex-end"><button class="abtn" type="submit">Envoyer ma demande →</button></div>
+    </form>
+  </div>`;
+  const form=stage.querySelector('#contactForm');
+  form.onsubmit=e=>{e.preventDefault();
+    const data=Object.fromEntries(new FormData(form).entries());
+    ['nom','email','entreprise','tel'].forEach(k=>data[k]=(data[k]||'').trim());
+    if(!data.nom||!/.+@.+\..+/.test(data.email)||!data.entreprise||!data.tel){alert("Merci de renseigner vos prénom/nom, email, entreprise et téléphone.");return;}
+    submitContact(data);renderThanks();
+  };
+}
+function renderThanks(){
+  stage.innerHTML=`<div class="astep" style="text-align:center">
+    <div class="astep__k">Demande envoyée</div>
+    <div class="astep__q">Merci, c'est noté.</div>
+    <p class="alead" style="margin-left:auto;margin-right:auto">On revient vers vous sous 24 h. Vous préférez réserver directement un créneau ?</p>
+    <div class="ares__cta"><button class="abtn js-book-inline" type="button" style="padding:15px 30px">Réserver un rendez-vous →</button></div>
+  </div>`;
+  stage.querySelector('.js-book-inline').onclick=()=>{closeContact();bookCalendly();};
+}
+function submitContact(data){
+  if(!FORM_ENDPOINT||FORM_ENDPOINT.includes('[À REMPLIR]')){console.warn('[Yvento] FORM_ENDPOINT non renseigné, soumission ignorée. Voir index.html.');return;}
+  const payload={...data,source:'Formulaire de contact Yvento'};
+  fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload)}).catch(e=>console.warn('Contact submit failed',e));
+}
+modal.querySelectorAll('[data-close]').forEach(el=>el.onclick=closeContact);
+addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeContact();});
+document.querySelectorAll('.js-audit').forEach(b=>b.addEventListener('click',openContactModal));
+document.querySelectorAll('.js-book').forEach(b=>b.addEventListener('click',bookCalendly));
+
+/* ════════════ COOKIES (RGPD / ePrivacy) ════════════ */
+(function(){
+  const KEY='yv_consent', el=document.getElementById('cookie');if(!el)return;
+  const stats=document.getElementById('ck-stats'), mkt=document.getElementById('ck-mkt');
+  const get=()=>{try{return JSON.parse(localStorage.getItem(KEY));}catch(e){return null;}};
+  const save=c=>{c.date=new Date().toISOString();localStorage.setItem(KEY,JSON.stringify(c));el.classList.remove('open','settings');applyConsent(c);};
+  function applyConsent(c){/* point d'accroche : activer ici les scripts tiers selon c.stats / c.mkt */}
+  function openBanner(settings){const c=get();if(stats)stats.checked=c?!!c.stats:false;if(mkt)mkt.checked=c?!!c.mkt:false;el.classList.add('open');el.classList.toggle('settings',!!settings);}
+  el.querySelector('.js-ck-accept').onclick=()=>save({necessary:true,stats:true,mkt:true});
+  el.querySelector('.js-ck-refuse').onclick=()=>save({necessary:true,stats:false,mkt:false});
+  el.querySelector('.js-ck-settings').onclick=()=>el.classList.add('settings');
+  el.querySelector('.js-ck-save').onclick=()=>save({necessary:true,stats:!!(stats&&stats.checked),mkt:!!(mkt&&mkt.checked)});
+  document.querySelectorAll('.js-cookie-manage').forEach(b=>b.onclick=()=>openBanner(true));
+  const c=get();
+  if(!c){openBanner(false);} else {applyConsent(c);}
+})();
+</script>
+</body>
+</html>
