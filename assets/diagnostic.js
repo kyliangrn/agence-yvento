@@ -209,6 +209,7 @@
   /* ================= RENDU ================= */
   function render(){
     progress(); pad.classList.remove('yv-fade'); void pad.offsetWidth; pad.classList.add('yv-fade');
+    root.classList.toggle('yv-diag--wide', step===-1); // carte élargie (format Méthode) seulement à l'écran de lancement
     if(step===-1) return intro();
     if(step<N)   return question();
     if(step===N) return gate();
@@ -216,11 +217,24 @@
   }
 
   function intro(){
-    pad.innerHTML = `<div class="yv-intro">
-      <div class="yv-eyebrow">Diagnostic commercial · offert</div>
-      <h1>Par quel levier <span class="yv-hl">commencer ?</span></h1>
-      <p>15 questions, 4 minutes. On situe votre force commerciale sur 5 dimensions et on vous dit précisément lequel de ces leviers activer en premier — avec votre score détaillé.</p>
-      <button class="yv-btn yv-btn-accent" data-act="start">Lancer mon diagnostic →</button>
+    pad.innerHTML = `<div class="yv-intro yv-intro--feature">
+      <div class="yv-intro-body">
+        <div class="yv-eyebrow">Diagnostic commercial · offert</div>
+        <h1>Par quel levier <span class="yv-hl">commencer ?</span></h1>
+        <p>15 questions, 4 minutes. On situe votre force commerciale sur 5 dimensions et on vous dit précisément lequel de ces leviers activer en premier — avec votre score détaillé.</p>
+        <button class="yv-btn yv-btn-accent yv-btn--sm" data-act="start">Lancer mon diagnostic →</button>
+      </div>
+      <div class="yv-intro-art" aria-hidden="true">
+        <div class="yv-minigauge">
+          <svg viewBox="0 0 160 160">
+            <circle cx="80" cy="80" r="64" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="10"/>
+            <circle cx="80" cy="80" r="64" fill="none" stroke="url(#yvgm)" stroke-width="10" stroke-linecap="round"
+              stroke-dasharray="402" stroke-dashoffset="108" transform="rotate(-90 80 80)"/>
+            <defs><linearGradient id="yvgm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF8A6E"/><stop offset="1" stop-color="${YV_CONFIG.accentHex}"/></linearGradient></defs>
+          </svg>
+          <div class="yv-mg-ctr"><div class="yv-mg-n">73</div><div class="yv-mg-l">Indice / 100</div></div>
+        </div>
+      </div>
     </div>`;
     pad.querySelector('[data-act=start]').onclick = ()=>{ step=0; render(); scrollTop(); };
   }

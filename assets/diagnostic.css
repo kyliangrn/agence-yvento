@@ -18,10 +18,12 @@
   --yv-font:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif;
   --yv-font-disp:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif;
 
-  position:relative; max-width:620px; margin:0 auto;
+  position:relative; max-width:640px; margin:0 auto;
   font-family:var(--yv-font); color:var(--yv-text); line-height:1.5;
   -webkit-font-smoothing:antialiased; text-align:left;
 }
+/* écran de lancement : carte élargie type « Méthode » */
+.yv-diag.yv-diag--wide{max-width:880px;}
 /* reset défensif : neutralise les styles globaux de la landing */
 .yv-diag *{box-sizing:border-box;}
 .yv-diag h1,.yv-diag h2,.yv-diag h3,.yv-diag p,.yv-diag ul,.yv-diag li{margin:0;padding:0;}
@@ -50,6 +52,22 @@
 
 .yv-intro h1{font-size:clamp(28px,4.4vw,36px);line-height:1.1;margin:16px 0 14px;isolation:isolate;}
 .yv-intro p{color:var(--yv-muted);font-size:16px;margin:0 0 22px;line-height:1.65;}
+/* écran de lancement : 2 colonnes (texte + CTA / illustration scoring) */
+.yv-intro--feature{display:grid;grid-template-columns:1.5fr .85fr;gap:30px;align-items:center;}
+.yv-intro-body{min-width:0;}
+.yv-intro-body p{margin-bottom:20px;}
+.yv-intro-art{display:flex;align-items:center;justify-content:center;}
+.yv-minigauge{position:relative;width:160px;height:160px;max-width:100%;}
+.yv-minigauge::before{content:"";position:absolute;inset:24px;border-radius:50%;background:radial-gradient(circle,rgba(255,67,41,.14),transparent 70%);filter:blur(13px);}
+.yv-minigauge svg{position:relative;width:100%;height:100%;display:block;}
+.yv-mg-ctr{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.yv-mg-n{font-family:var(--yv-font-disp);font-weight:900;font-size:40px;line-height:1;letter-spacing:-.03em;color:var(--yv-text);}
+.yv-mg-l{font-size:8.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--yv-faint);margin-top:5px;}
+@media(max-width:640px){
+  .yv-intro--feature{grid-template-columns:1fr;gap:14px;}
+  .yv-intro-art{order:-1;justify-content:flex-start;}
+  .yv-minigauge{width:118px;height:118px;}
+}
 .yv-trust{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;align-items:center;}
 .yv-trust span{font-size:13px;color:var(--yv-faint);} .yv-trust b{color:var(--yv-muted);font-weight:600;} .yv-trust .yv-sep{color:var(--yv-accent);}
 
@@ -69,6 +87,7 @@
 .yv-btn-accent{background:var(--yv-accent);color:#fff;box-shadow:0 10px 26px -10px rgba(255,67,41,.45);}
 .yv-btn-accent:hover{background:var(--yv-accent-deep);transform:translateY(-2px);box-shadow:0 16px 34px -12px rgba(255,67,41,.55);}
 .yv-btn-accent:disabled{background:#3A2620;color:#8A6B62;box-shadow:none;cursor:not-allowed;transform:none;}
+.yv-btn--sm{width:auto;padding:11px 20px;font-size:14px;}
 .yv-nav{display:flex;margin-top:22px;}
 .yv-back{background:none;border:none;color:var(--yv-faint);font-size:13.5px;cursor:pointer;font-family:var(--yv-font);font-weight:500;padding:0;}
 .yv-back:hover{color:var(--yv-muted);}
@@ -173,4 +192,3 @@
 
 /* ── Intégration dans la landing : la page fournit déjà l'en-tête de marque ── */
 #diagnostic .yv-brand{display:none;}
-#diagnostic .yv-diag{max-width:640px;}
