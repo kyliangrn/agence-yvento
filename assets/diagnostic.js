@@ -221,7 +221,7 @@
       <div class="yv-intro-body">
         <div class="yv-eyebrow">Diagnostic commercial · offert</div>
         <h1>Par quel levier <span class="yv-hl">commencer ?</span></h1>
-        <p>15 questions, 4 minutes. On situe votre force commerciale sur 5 dimensions et on vous dit précisément lequel de ces leviers activer en premier — avec votre score détaillé.</p>
+        <p>15 questions, 4 minutes. On situe votre force commerciale sur 5 dimensions et on vous dit précisément lequel de ces leviers activer en premier, avec votre score détaillé.</p>
         <button class="yv-btn yv-btn-accent yv-btn--sm" data-act="start">Lancer mon diagnostic →</button>
       </div>
       <div class="yv-intro-art" aria-hidden="true">
