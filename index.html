@@ -20,6 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400;1,14..32,500;1,14..32,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/diagnostic.css">
 
 <style>
 /* ════════════ YVENTO — clair · lime · forme 3D (image) + animations méthode ════════════ */
@@ -465,6 +466,13 @@ nav.scrolled .nav-inner{max-width:960px;background:rgba(18,20,24,0.5);border-col
   </div>
 </div>
 
+<!-- DIAGNOSTIC INTERACTIF -->
+<section class="diag" id="diagnostic">
+  <div class="wrap">
+    <div id="yvento-diagnostic" class="reveal"></div>
+  </div>
+</section>
+
 <!-- MÉTHODE -->
 <section class="chan" id="methode">
   <div class="wrap">
@@ -707,10 +715,15 @@ function loadCalendly(){return new Promise(res=>{
   if(!document.querySelector('link[data-calendly]')){const l=document.createElement('link');l.rel='stylesheet';l.href='https://assets.calendly.com/assets/external/widget.css';l.setAttribute('data-calendly','');document.head.appendChild(l);}
   const s=document.createElement('script');s.src='https://assets.calendly.com/assets/external/widget.js';s.async=true;s.onload=()=>{cReady=true;res();};document.body.appendChild(s);
 });}
-async function bookCalendly(){
+async function bookCalendly(prefill){
   if(CALENDLY_URL.includes('[À REMPLIR]')){alert("Réservation bientôt disponible.\n(Renseignez CALENDLY_URL en haut du <script> dans index.html)");return;}
-  await loadCalendly();window.Calendly.initPopupWidget({url:CALENDLY_URL});
+  await loadCalendly();
+  const opts={url:CALENDLY_URL};
+  if(prefill&&(prefill.name||prefill.email)) opts.prefill={name:prefill.name||'',email:prefill.email||''};
+  window.Calendly.initPopupWidget(opts);
 }
+/* Hook utilisé par le prédiagnostic (assets/diagnostic.js) : même popup Calendly, pré-rempli */
+window.yvBook=function(lead){bookCalendly(lead||{});};
 
 /* ════════════ FORMULAIRE DE CONTACT ════════════ */
 const modal=document.getElementById('audit'),stage=document.getElementById('auditStage');
@@ -758,8 +771,14 @@ function submitContact(data){
 }
 modal.querySelectorAll('[data-close]').forEach(el=>el.onclick=closeContact);
 addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeContact();});
-document.querySelectorAll('.js-audit').forEach(b=>b.addEventListener('click',openContactModal));
-document.querySelectorAll('.js-book').forEach(b=>b.addEventListener('click',bookCalendly));
+/* Les CTA « bilan offert » mènent au prédiagnostic interactif (section #diagnostic) */
+function gotoDiagnostic(){
+  const sec=document.getElementById('diagnostic');
+  if(!sec){openContactModal();return;}
+  sec.scrollIntoView({behavior:'smooth',block:'start'});
+}
+document.querySelectorAll('.js-audit').forEach(b=>b.addEventListener('click',gotoDiagnostic));
+document.querySelectorAll('.js-book').forEach(b=>b.addEventListener('click',()=>bookCalendly()));
 
 /* ════════════ COOKIES (RGPD / ePrivacy) ════════════ */
 (function(){
@@ -778,5 +797,6 @@ document.querySelectorAll('.js-book').forEach(b=>b.addEventListener('click',book
   if(!c){openBanner(false);} else {applyConsent(c);}
 })();
 </script>
+<script src="assets/diagnostic.js" defer></script>
 </body>
 </html>
