@@ -216,7 +216,10 @@
   }
 
   function intro(){
-    pad.innerHTML = `<div class="yv-intro yv-intro--cta">
+    pad.innerHTML = `<div class="yv-intro">
+      <div class="yv-eyebrow">Diagnostic commercial · offert</div>
+      <h1>Par quel levier <span class="yv-hl">commencer ?</span></h1>
+      <p>15 questions, 4 minutes. On situe votre force commerciale sur 5 dimensions et on vous dit précisément lequel de ces leviers activer en premier — avec votre score détaillé.</p>
       <button class="yv-btn yv-btn-accent" data-act="start">Lancer mon diagnostic →</button>
     </div>`;
     pad.querySelector('[data-act=start]').onclick = ()=>{ step=0; render(); scrollTop(); };
