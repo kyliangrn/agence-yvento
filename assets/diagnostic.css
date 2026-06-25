@@ -50,10 +50,7 @@
 
 .yv-intro h1{font-size:clamp(28px,4.4vw,36px);line-height:1.1;margin:16px 0 14px;isolation:isolate;}
 .yv-intro p{color:var(--yv-muted);font-size:16px;margin:0 0 22px;line-height:1.65;}
-.yv-dims-lab{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--yv-faint);font-weight:700;margin:2px 0 6px;}
-.yv-dims{display:flex;flex-direction:column;margin:0 0 24px;border-top:1px solid var(--yv-line);}
-.yv-dims li{display:flex;align-items:center;gap:14px;padding:13px 2px;border-bottom:1px solid var(--yv-line);font-size:14.5px;color:var(--yv-text);}
-.yv-dn{font-variant-numeric:tabular-nums;font-size:12px;font-weight:700;color:var(--yv-faint);min-width:18px;}
+.yv-intro--cta{padding:6px 0;}
 .yv-trust{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;align-items:center;}
 .yv-trust span{font-size:13px;color:var(--yv-faint);} .yv-trust b{color:var(--yv-muted);font-weight:600;} .yv-trust .yv-sep{color:var(--yv-accent);}
 

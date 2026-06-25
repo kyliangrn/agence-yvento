@@ -216,11 +216,8 @@
   }
 
   function intro(){
-    pad.innerHTML = `<div class="yv-intro">
-      <div class="yv-dims-lab">Les 5 dimensions analysées</div>
-      <ul class="yv-dims">${CATS.map((c,i)=>`<li><span class="yv-dn">0${i+1}</span>${c.label}</li>`).join('')}</ul>
+    pad.innerHTML = `<div class="yv-intro yv-intro--cta">
       <button class="yv-btn yv-btn-accent" data-act="start">Lancer mon diagnostic →</button>
-      <div class="yv-trust"><span><b>Gratuit</b></span><span class="yv-sep">·</span><span><b>≈ 4 min</b></span><span class="yv-sep">·</span><span>Résultat <b>immédiat</b></span></div>
     </div>`;
     pad.querySelector('[data-act=start]').onclick = ()=>{ step=0; render(); scrollTop(); };
   }
