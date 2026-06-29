@@ -6,13 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 
-<title>Yvento · Agence de prospection commerciale B2B</title>
-<meta name="description" content="La prospection pour améliorer votre conversion. Cold call, ciblage précis, rendez-vous qualifiés. Agence de prospection B2B. Premier échange gratuit, sans engagement.">
+<title>Prospection B2B externalisée | Yvento – Lyon & Occitanie</title>
+<meta name="description" content="Agence de prospection B2B externalisée : téléphone, multicanal et terrain à Lyon et en Occitanie. RDV qualifiés livrés dans votre agenda. Bilan offert.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Yvento">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Yvento · Agence de prospection commerciale B2B">
-<meta property="og:description" content="La prospection pour améliorer votre conversion. Des rendez-vous qualifiés, pas du volume.">
+<meta property="og:title" content="Prospection B2B externalisée | Yvento – Lyon & Occitanie">
+<meta property="og:description" content="Téléphone, multicanal et terrain à Lyon et en Occitanie. Des RDV qualifiés livrés dans votre agenda, pas du volume. Bilan offert.">
 <meta property="og:image" content="assets/favicon.png">
 <meta property="og:image:width" content="392">
 <meta property="og:image:height" content="394">
@@ -205,9 +205,12 @@ nav.scrolled .nav-inner{max-width:960px;background:rgba(18,20,24,0.5);border-col
 .team-desc p b{color:var(--tx);font-weight:600}
 .team-flag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;color:var(--tx-2);background:var(--surface);border:1px solid var(--line);padding:8px 15px;border-radius:999px;margin-top:6px}
 .founders{order:3;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.fcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s}
-.fcard:hover{transform:translateY(-4px);box-shadow:0 26px 48px -34px rgba(20,22,26,0.32)}
-.fcard__ph{aspect-ratio:1/1;overflow:hidden;background:var(--surface-2)}
+.fcard{display:block;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s,border-color .3s}
+.fcard:hover{transform:translateY(-4px);box-shadow:0 26px 48px -34px rgba(20,22,26,0.32);border-color:var(--line)}
+.fcard__ph{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--surface-2)}
+.fcard__in{position:absolute;top:10px;right:10px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:rgba(11,12,15,0.55);backdrop-filter:blur(6px);border:1px solid var(--line-2);color:#fff;opacity:0;transform:translateY(-4px);transition:opacity .25s,transform .25s}
+.fcard__in svg{width:15px;height:15px}
+.fcard:hover .fcard__in,.fcard:focus-visible .fcard__in{opacity:1;transform:none}
 .fcard__ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
 .fcard:hover .fcard__ph img{transform:scale(1.04)}
 .fcard__body{padding:14px 16px 18px}
@@ -244,6 +247,10 @@ nav.scrolled .nav-inner{max-width:960px;background:rgba(18,20,24,0.5);border-col
 .foot__links{display:flex;gap:24px;flex-wrap:wrap}
 .foot__links a{font-size:14px;color:var(--tx-2);transition:color .2s}
 .foot__links a:hover{color:var(--tx)}
+.foot__social{display:inline-flex;gap:10px;align-items:center}
+.foot__social a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid var(--line-2);color:var(--tx-2);transition:color .2s,border-color .2s,transform .2s}
+.foot__social a:hover{color:var(--tx);border-color:var(--line);transform:translateY(-2px)}
+.foot__social svg{width:18px;height:18px}
 .foot__copy{font-size:13px;color:var(--tx-3);width:100%;border-top:1px solid var(--line-2);padding-top:22px;margin-top:8px;display:flex;flex-direction:column;gap:14px}
 .foot__legal{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center}
 .foot__legal a,.foot__legal button{font-size:13px;color:var(--tx-2);background:none;border:none;padding:0;font-family:inherit;cursor:pointer;transition:color .2s}
@@ -403,7 +410,7 @@ nav.scrolled .nav-inner{max-width:960px;background:rgba(18,20,24,0.5);border-col
 <nav id="mainNav">
   <div class="nav-inner">
     <a href="#top" class="nav-logo"><span class="nav-logo-text">Yvento<span class="pt">.</span></span></a>
-    <div class="nav-links"><a href="#methode">Méthode</a><a href="#process">Process</a><a href="#equipe">Équipe</a><a href="#faq">FAQ</a></div>
+    <div class="nav-links"><a href="#methode">Méthode</a><a href="#process">Process</a><a href="#equipe">Équipe</a><a href="blog/index.html">Blog</a><a href="#faq">FAQ</a></div>
     <button class="btn-filled-sm js-book" type="button">Réserver un rendez-vous</button>
   </div>
 </nav>
@@ -587,22 +594,22 @@ nav.scrolled .nav-inner{max-width:960px;background:rgba(18,20,24,0.5);border-col
         <div class="team-flag"><span>🇫🇷</span> Basé en France</div>
       </div>
       <div class="founders reveal d1">
-        <article class="fcard">
-          <div class="fcard__ph"><img src="assets/kylian.png" alt="Kylian, cofondateur Yvento" loading="lazy"></div>
+        <a class="fcard" href="https://www.linkedin.com/in/kylian-garin-426a94174/" target="_blank" rel="noopener" aria-label="Kylian sur LinkedIn">
+          <div class="fcard__ph"><img src="assets/kylian.png" alt="Kylian, cofondateur Yvento" loading="lazy"><span class="fcard__in" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></span></div>
           <div class="fcard__body"><div class="fcard__name">Kylian</div><div class="fcard__role">Cofondateur · Stratégie &amp; Growth</div></div>
-        </article>
-        <article class="fcard">
-          <div class="fcard__ph"><img src="assets/florian.png" alt="Florian, cofondateur Yvento" loading="lazy"></div>
+        </a>
+        <a class="fcard" href="https://www.linkedin.com/in/florian-laverdure/" target="_blank" rel="noopener" aria-label="Florian sur LinkedIn">
+          <div class="fcard__ph"><img src="assets/florian.png" alt="Florian, cofondateur Yvento" loading="lazy"><span class="fcard__in" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></span></div>
           <div class="fcard__body"><div class="fcard__name">Florian</div><div class="fcard__role">Cofondateur · Opérations &amp; Prospection</div></div>
-        </article>
-        <article class="fcard">
-          <div class="fcard__ph"><img src="assets/alexine.png" alt="Alexine, consultante outbound chez Yvento" loading="lazy"></div>
+        </a>
+        <a class="fcard" href="https://www.linkedin.com/in/alexine-dumas%E2%99%BB/" target="_blank" rel="noopener" aria-label="Alexine sur LinkedIn">
+          <div class="fcard__ph"><img src="assets/alexine.png" alt="Alexine, consultante outbound chez Yvento" loading="lazy"><span class="fcard__in" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></span></div>
           <div class="fcard__body"><div class="fcard__name">Alexine</div><div class="fcard__role">Consultante outbound</div></div>
-        </article>
-        <article class="fcard">
-          <div class="fcard__ph"><img src="assets/clement.png" alt="Clément, software architect chez Yvento" loading="lazy"></div>
+        </a>
+        <a class="fcard" href="https://www.linkedin.com/in/cl%C3%A9ment-fevre-47330b85/" target="_blank" rel="noopener" aria-label="Clément sur LinkedIn">
+          <div class="fcard__ph"><img src="assets/clement.png" alt="Clément, software architect chez Yvento" loading="lazy"><span class="fcard__in" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></span></div>
           <div class="fcard__body"><div class="fcard__name">Clément</div><div class="fcard__role">Software Architect</div></div>
-        </article>
+        </a>
       </div>
     </div>
   </div>
@@ -655,7 +662,11 @@ nav.scrolled .nav-inner{max-width:960px;background:rgba(18,20,24,0.5);border-col
 <footer class="foot">
   <div class="wrap foot__in">
     <a href="#top" class="brand">Yvento<span class="pt">.</span></a>
-    <div class="foot__links"><a href="#methode">Méthode</a><a href="#process">Process</a><a href="#equipe">Équipe</a><a href="#faq">FAQ</a><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+    <div class="foot__links"><a href="#methode">Méthode</a><a href="#process">Process</a><a href="#equipe">Équipe</a><a href="blog/index.html">Blog</a><a href="#faq">FAQ</a></div>
+    <div class="foot__social">
+      <a href="https://www.linkedin.com/company/yvento/?viewAsMember=true" target="_blank" rel="noopener" aria-label="Yvento sur LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+      <a href="https://www.instagram.com/yvento.fr/" target="_blank" rel="noopener" aria-label="Yvento sur Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.12 1.38C1.35 2.68.94 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.12.66.66 1.33 1.08 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.12-1.38.66-.66 1.08-1.33 1.38-2.12.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.12-.66-.66-1.33-1.08-2.12-1.38-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4zm6.41-10.4a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44z"/></svg></a>
+    </div>
     <div class="foot__copy">
       <div class="foot__legal">
         <a href="mentions-legales.html">Mentions légales</a>
