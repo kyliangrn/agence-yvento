@@ -228,11 +228,11 @@
         <div class="yv-minigauge">
           <svg viewBox="0 0 160 160">
             <circle cx="80" cy="80" r="64" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="10"/>
-            <circle cx="80" cy="80" r="64" fill="none" stroke="url(#yvgm)" stroke-width="10" stroke-linecap="round"
+            <circle class="yv-mg-arc" cx="80" cy="80" r="64" fill="none" stroke="url(#yvgm)" stroke-width="10" stroke-linecap="round"
               stroke-dasharray="402" stroke-dashoffset="108" transform="rotate(-90 80 80)"/>
             <defs><linearGradient id="yvgm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF8A6E"/><stop offset="1" stop-color="${YV_CONFIG.accentHex}"/></linearGradient></defs>
           </svg>
-          <div class="yv-mg-ctr"><div class="yv-mg-n">73</div><div class="yv-mg-l">Indice / 100</div></div>
+          <div class="yv-mg-ctr"><div class="yv-mg-n">?</div><div class="yv-mg-l">Indice / 100</div></div>
         </div>
       </div>
     </div>`;
