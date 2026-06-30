@@ -24,6 +24,8 @@
 }
 /* écran de lancement : carte élargie type « Méthode » */
 .yv-diag.yv-diag--wide{max-width:880px;}
+/* fond plus sobre + translucide pour dissocier la carte de lancement des offres au-dessus */
+.yv-diag--wide .yv-card{background:rgba(14,16,20,.4);border-color:rgba(255,255,255,.06);box-shadow:0 30px 64px -48px rgba(0,0,0,.55);}
 /* reset défensif : neutralise les styles globaux de la landing */
 .yv-diag *{box-sizing:border-box;}
 .yv-diag h1,.yv-diag h2,.yv-diag h3,.yv-diag p,.yv-diag ul,.yv-diag li{margin:0;padding:0;}
@@ -63,6 +65,12 @@
 .yv-mg-ctr{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
 .yv-mg-n{font-family:var(--yv-font-disp);font-weight:900;font-size:40px;line-height:1;letter-spacing:-.03em;color:var(--yv-text);}
 .yv-mg-l{font-size:8.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--yv-faint);margin-top:5px;}
+/* la jauge « se mesure » en boucle (le score reste inconnu : « ? » au centre) */
+.yv-mg-arc{animation:yvMgSweep 2.8s cubic-bezier(.22,1,.36,1) infinite alternate;}
+@keyframes yvMgSweep{0%{stroke-dashoffset:402;}100%{stroke-dashoffset:64;}}
+.yv-mg-n{animation:yvMgPulse 2.8s ease-in-out infinite;}
+@keyframes yvMgPulse{0%,100%{opacity:.55;}50%{opacity:1;}}
+@media(prefers-reduced-motion:reduce){.yv-mg-arc{animation:none;stroke-dashoffset:108;}.yv-mg-n{animation:none;opacity:1;}}
 @media(max-width:640px){
   .yv-intro--feature{grid-template-columns:1fr;gap:14px;}
   .yv-intro-art{order:-1;justify-content:flex-start;}
