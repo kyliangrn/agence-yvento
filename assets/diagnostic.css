@@ -24,8 +24,9 @@
 }
 /* écran de lancement : carte élargie type « Méthode » */
 .yv-diag.yv-diag--wide{max-width:880px;}
-/* carte de lancement : fond sobre translucide, sans bordure */
+/* carte de lancement : fond sobre translucide, sans bordure ni barre de progression en haut */
 .yv-diag--wide .yv-card{background:rgba(14,16,20,.4);border:none;box-shadow:0 30px 64px -48px rgba(0,0,0,.55);}
+.yv-diag--wide .yv-pbar{display:none;}
 /* reset défensif : neutralise les styles globaux de la landing */
 .yv-diag *{box-sizing:border-box;}
 .yv-diag h1,.yv-diag h2,.yv-diag h3,.yv-diag p,.yv-diag ul,.yv-diag li{margin:0;padding:0;}
