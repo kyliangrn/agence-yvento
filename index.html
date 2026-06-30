@@ -790,14 +790,13 @@ function submitContact(data){
 }
 modal.querySelectorAll('[data-close]').forEach(el=>el.onclick=closeContact);
 addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeContact();});
-/* Les CTA « bilan offert » mènent au prédiagnostic interactif (section #diagnostic) */
-function gotoDiagnostic(){
-  const sec=document.getElementById('diagnostic');
-  if(!sec){openContactModal();return;}
-  sec.scrollIntoView({behavior:'smooth',block:'start'});
-}
-document.querySelectorAll('.js-audit').forEach(b=>b.addEventListener('click',gotoDiagnostic));
-document.querySelectorAll('.js-book').forEach(b=>b.addEventListener('click',()=>bookCalendly()));
+/* Les CTA « bilan offert » / « laisser mes coordonnées » ouvrent le formulaire de contact simple */
+document.querySelectorAll('.js-audit').forEach(b=>b.addEventListener('click',openContactModal));
+/* Le CTA de la nav redirige directement vers Calendly (nouvel onglet) */
+document.querySelectorAll('.js-book').forEach(b=>b.addEventListener('click',()=>{
+  if(CALENDLY_URL.includes('[À REMPLIR]')){alert("Réservation bientôt disponible.");return;}
+  window.open(CALENDLY_URL,'_blank','noopener');
+}));
 
 /* ════════════ COOKIES (RGPD / ePrivacy) ════════════ */
 (function(){
