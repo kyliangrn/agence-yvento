@@ -219,7 +219,6 @@
   function intro(){
     pad.innerHTML = `<div class="yv-intro yv-intro--feature">
       <div class="yv-intro-body">
-        <div class="yv-eyebrow">Diagnostic commercial · offert</div>
         <h1>Par quel levier <span class="yv-hl">commencer ?</span></h1>
         <p>15 questions, 4 minutes. On situe votre force commerciale sur 5 dimensions et on vous dit précisément lequel de ces leviers activer en premier, avec votre score détaillé.</p>
         <button class="yv-btn yv-btn-accent yv-btn--sm" data-act="start">Lancer mon diagnostic →</button>
@@ -237,6 +236,15 @@
       </div>
     </div>`;
     pad.querySelector('[data-act=start]').onclick = ()=>{ step=0; render(); scrollTop(); };
+    // Animation de la jauge : déclenchée au scroll (une fois quand visible), rejouée à chaque réapparition.
+    const gauge = pad.querySelector('.yv-minigauge'), arc = pad.querySelector('.yv-mg-arc');
+    if(gauge && arc && !matchMedia('(prefers-reduced-motion:reduce)').matches){
+      const io = new IntersectionObserver(es=>es.forEach(e=>{
+        if(e.isIntersecting){ arc.classList.remove('yv-anim'); void arc.getBoundingClientRect(); arc.classList.add('yv-anim'); }
+        else { arc.classList.remove('yv-anim'); }
+      }), {threshold:0.45});
+      io.observe(gauge);
+    }
   }
 
   function question(){
