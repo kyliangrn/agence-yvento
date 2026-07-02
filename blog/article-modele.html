@@ -270,7 +270,7 @@ if(x)x.href='https://twitter.com/intent/tweet?url='+encodeURIComponent(url)+'&te
 if(cp)cp.addEventListener('click',e=>{e.preventDefault();navigator.clipboard?.writeText(url).then(()=>{cp.textContent='Lien copié ✓';setTimeout(()=>cp.textContent='Copier le lien',1800);});});
 
 /* ── Réservation (popup Calendly) ── */
-const CALENDLY_URL="https://calendly.com/florian-laverdure-yvento/30min";
+const CALENDLY_URL="https://calendly.com/yvento/30min";
 let cReady=false;
 function loadCalendly(){return new Promise(res=>{
   if(cReady&&window.Calendly)return res();

@@ -11,7 +11,7 @@
   const YV_CONFIG = {
     mountId: 'yvento-diagnostic',
     formspreeUrl: 'https://formspree.io/f/mdarekwg', // capture du lead (mêmes leads que la landing)
-    calendlyUrl: 'https://calendly.com/florian-laverdure-yvento/30min', // prise de RDV (= CALENDLY_URL de la landing)
+    calendlyUrl: 'https://calendly.com/yvento/30min', // prise de RDV (= CALENDLY_URL de la landing)
     accentHex: '#FF4329',   // doit rester aligné avec --yv-accent dans le CSS (utilisé par le radar)
     thresholds: {
       acquisition: 55,      // Acquisition si Ciblage < x OU Prospection < x

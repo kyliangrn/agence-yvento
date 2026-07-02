@@ -304,7 +304,7 @@ if(li)li.href='https://www.linkedin.com/sharing/share-offsite/?url='+encodeURICo
 if(x)x.href='https://twitter.com/intent/tweet?url='+encodeURIComponent(url)+'&text='+encodeURIComponent(title);
 if(cp)cp.addEventListener('click',e=>{e.preventDefault();navigator.clipboard?.writeText(url).then(()=>{cp.textContent='Lien copié ✓';setTimeout(()=>cp.textContent='Copier le lien',1800);});});
 
-const CALENDLY_URL="https://calendly.com/florian-laverdure-yvento/30min";
+const CALENDLY_URL="https://calendly.com/yvento/30min";
 let cReady=false;
 function loadCalendly(){return new Promise(res=>{
   if(cReady&&window.Calendly)return res();
